@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh" lang="zh">
+<head>
+<title>页面标题</title>
+<meta http-equiv="content-type" content="text/html;charset=utf-8"/>
+<meta http-equiv="content-style-type" content="text/css"/>
+<meta http-equiv="content-script-type" content="text/javascript"/>
+<meta http-equiv="x-ua-compatible" content="ie=emulateie7"/>
+<meta name="author" content="netease"/>
+<meta name="version" content="1.0"/>
+<meta name="keywords" content=""/>
+<meta name="description" content=""/>
+<link type="text/css" rel="stylesheet" href="css/style.css"/>
+<style>
+html{overflow:auto;}
+</style>
+</head>
+<body id="page-163-com">
+	<div class="g-lihd">
+		<div class="m-header">
+			<h1 class="m-logo">
+				<a href="#">网易阅读</a>
+			</h1>
+			 <div class="m-ulink"><a href="#">登录</a><span class="sep">|</span><a href="#">注册</a></div>
+		</div>
+	</div>
+	<div class="g-libd">
+		<div class="m-body">
+			<div class="dy-sucs1"></div>
+			<a class="dy-sucs2">管理我的订阅</a>
+			<p class="dy-sucs3">本窗口将在<span id="j-ticks"></span>秒钟后关闭</p>
+			<a class="dy-sucs4" href="javascript: window.close();void(0);"></a>
+		</div>
+	</div>
+<script>
+window.onload = function(){
+	var ticks = document.getElementById('j-ticks');
+	var initNum = 5;
+	ticks.innerHTML = initNum;
+	countdown = setInterval(function(){
+		initNum --;
+		ticks.innerHTML = initNum;
+		if(initNum <= 0) {
+			clearTimeout(countdown);
+			window.close();
+		}
+	},1000)
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,248 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh" lang="zh">
+<head>
+<title>页面标题</title>
+<meta http-equiv="content-type" content="text/html;charset=utf-8"/>
+<meta http-equiv="content-style-type" content="text/css"/>
+<meta http-equiv="content-script-type" content="text/javascript"/>
+<meta http-equiv="x-ua-compatible" content="ie=emulateie7"/>
+<meta name="author" content="netease"/>
+<meta name="version" content="1.0"/>
+<meta name="keywords" content=""/>
+<meta name="description" content=""/>
+<link type="text/css" rel="stylesheet" href="css/header.css"/>
+<link type="text/css" rel="stylesheet" href="css/layer.css"/>
+</head>
+<body id="page-163-com">
+<button id="btn1">弹窗1</button>
+<button id="btn2">弹窗2</button>
+<button id="btn3">弹窗3</button>
+<button id="btn4">添加订阅</button>
+<button id="btn5">取消订阅</button>
+<button id="btn6">订阅失败</button>
+<button id="btn7">步骤提示</button>
+<button id="btn8">邮件提示</button>
+
+<div id="layer1" style="display:none;" class="m-layer m-layer-1">
+    <div class="lytt yy"><h4>登录网易通行证</h4><a href="#" class="lyclose j-close">关闭</a></div>
+    <div class="lyct">
+        <div class="m-login">
+            <form>
+                <div class="row"><label>帐号：</label><div class="intwrap"><span class="ipt-wrap"><input class="ipt" type="text" /></span></div></div>
+                <div class="row"><label>密码：</label><div class="intwrap"><span class="ipt-wrap"><input class="ipt" type="password" /></span></div></div>
+                <div class="row row-1">
+                    <input type="checkbox"/><label class="auto">两周内自动登录</label>
+                    <a href="#">忘记密码？</a>
+                </div>
+                <div class="row row-1">
+                    <button><span>登录</span></button>
+                    <a class="wyt" href="#">注册网易通行证&gt;&gt;</a>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="lybt">
+        <button class="j-close">我知道了</button>
+    </div>
+</div>
+
+
+<div id="layer2" style="display:none;" class="m-layer m-layer-1">
+    <div class="lytt yy"><h4>帐号提示</h4><a href="#" class="lyclose j-close">关闭</a></div>
+    <div class="lyct">
+        <div class="m-actip">
+            <h3>您的帐号内还未订阅任何内容源。</h3>
+				<p>1.已经在使用网易阅读客户端？</p>
+				<p class="ans">请在客户端上登录帐号，内容源将自动同步，并可在此进行管理。</p>
+				<p>2.还未使用客户端？</p>
+				<p class="ans">你可在此添加订阅，<a href="#">下载客户端</a>后在客户端上登录即可阅读。</p>
+				<a href="#" class="btn j-close">我知道了</a>
+        </div>
+    </div>
+    <div class="lybt">
+        <button class="j-close">我知道了</button>
+    </div>
+</div>
+
+<div id="layer3" style="display:none;" class="m-sucpop">
+	<h4>分享成功!</h4>
+	<p><span>1</span>秒后窗口自动关闭，<a href="#" class="j-close">点击这里</a>立刻关闭</p>
+</div>
+
+<div id="layer4" style="display:none;" class="m-layer m-layer-2">
+    <div class="lytt yy"><h4>订阅成功</h4><a href="#" class="lyclose j-close">关闭</a></div>
+    <div class="lyct">
+        <div class="m-addyuan">
+			
+			<div class="m-inf">
+				<div class="w-img"><img alt="" src="images/tx.jpg">
+				<div class="tick"></div>
+				</div>
+				<div class="txt">
+					<h4>耶鲁大学政治学导论</h4>
+					<div class="w-star w-star1"><span>&nbsp;</span><span>&nbsp;</span><span>&nbsp;</span><span>&nbsp;</span><span class="no">&nbsp;</span></div>
+					<div class="has">12121人订阅</div>
+				</div>
+			</div>
+			<div class="fromto"></div>
+			<div class="pmsg">
+				<p class="acn">abcdefghijklmn-ooxx@xyz.com</p>
+			</div>
+			<p class="tip">请在客户端内容源首页刷新后,即可阅读此内容。</p>
+			<div class="bt">
+				<button class="addbtn" type="submit">知道了</button><button class="cancelbtn j-close" type="button">不要再提醒我</button>
+			</div>
+        </div>
+    </div>
+    <div class="lybt">
+        <button class="j-close">我知道了</button>
+    </div>
+</div>
+
+<div id="layer5" style="display:none;" class="m-layer m-layer-2">
+    <div class="lytt yy"><h4>取消订阅</h4><a href="#" class="lyclose j-close">关闭</a></div>
+    <div class="lyct">
+        <div class="m-removeyuan">
+			<h3>是否要从你的订阅内取消 网易娱乐频道？</h3>
+			<p>如果您当前正在阅读此内容源，您的取消操作将在客户端上刷新订阅后生效。</p>
+			<div class="bt">
+				<button type="submit">确定</button><button class="j-close" type="button">取消</button>
+			</div>
+        </div>
+    </div>
+    <div class="lybt">
+        <button class="j-close">我知道了</button>
+    </div>
+</div>
+
+<div id="layer6" style="display:none" class="m-layer m-layer-2 m-layer-4">
+    <div class="lytt yy"><h4>提示</h4><a href="#" class="lyclose j-close">关闭</a></div>
+    <div class="lyct">
+        <div class="m-removeyuan">
+			<h3>您最多只能订阅120个内容源，不要太贪心哦！</h3>
+			<div class="bt">
+				<button type="submit">知道了</button><button class="j-close" type="button">订阅管理</button>
+			</div>
+        </div>
+    </div>
+    <div class="lybt">
+        <button class="j-close">我知道了</button>
+    </div>
+</div>
+
+<div id="layer7" style="display:none;" class="m-layer m-layer-2">
+    <div class="lytt yy"><h4>订阅成功</h4><a href="#" class="lyclose j-close">关闭</a></div>
+    <div class="lyct">
+        <div class="m-steps">
+			<p>还差两步，你就能在客户端上阅读此内容。</p>
+			<div class="illus"></div>
+			<div class="bt">
+				<button class="j-close" type="button">知道了</button>
+			</div>
+        </div>
+    </div>
+    <div class="lybt">
+        <button class="j-close">我知道了</button>
+    </div>
+</div>
+
+<div id="layer8" style="display:none;" class="m-layer m-layer-2 m-layer-4">
+    <div class="lytt yy"><h4>提示</h4><a href="#" class="lyclose j-close">关闭</a></div>
+    <div class="lyct">
+        <div class="m-removeyuan">
+			<h3 style="line-height:26px;height:71px;">您最多只能订阅120个内容源，不要太贪心哦您最多只能订阅120个内容源，不要太贪心哦！您最多只能订阅120个内容源，不要太贪心哦！！</h3>
+			<div class="bt">
+				<button type="submit">知道了</button>
+			</div>
+        </div>
+    </div>
+    <div class="lybt">
+        <button class="j-close">我知道了</button>
+    </div>
+</div>
+
+<div class="m-login" style="display:none;">
+    <div class="hd">
+        <h3>登录网易通行证</h3>
+        <a class="btn"></a>
+    </div>
+    <div class="bd">
+        <form>
+            <div class="row"><label>帐号：</label><div class="intwrap"><input class="ipt" type="text" /></div></div>
+            <div class="row"><label>密码：</label><div class="intwrap"><input class="ipt" type="password" /></div></div>
+            <div class="row row-1">
+                <input type="radio"/><label class="auto">X周内自动登录</label>
+                <a href="#">忘记密码？</a>
+            </div>
+            <div class="row row-1">
+                <button><span>登录</span></button>
+                <a class="wyt" href="#">注册网易通行证&gt;&gt;</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+<script type="text/javascript" src="js/yd.js"></script>
+<script type="text/javascript">
+window.onload=function(){
+	$("btn1").onclick= function(){
+		layerOpen("layer1");
+	}
+	
+	$("btn2").onclick= function(){
+		layerOpen("layer2");
+	}
+	
+	$("btn3").onclick= function(){
+		layerOpen("layer3");
+		autoClose($("layer3"));
+	}
+	
+	$("btn4").onclick= function(){
+		layerOpen("layer4");
+	}
+	
+	$("btn5").onclick= function(){
+		layerOpen("layer5");
+	}
+	
+	$("btn6").onclick= function(){
+		layerOpen("layer6");
+	}
+	
+	$("btn7").onclick= function(){
+		layerOpen("layer7");
+	}
+	
+	$("btn8").onclick= function(){
+		layerOpen("layer8");
+	}
+	
+	var setHighlight = function(){/* 设置输入框点击高亮 */
+		var iptArr = $$('layer1','ipt');
+		for(var i=0; i<iptArr.length; i++){
+			evton(iptArr[i],'focus',function(e){
+				//console.log(target(e));
+				addClass(target(e).parentNode,'focus');
+			});
+			
+			evton(iptArr[i],'blur',function(e){
+				delClass(target(e).parentNode,'focus');
+			});
+		}
+	};
+	
+	setHighlight();
+	
+	function autoClose(ele){
+		if(ele.style.display !== "none"){
+			setTimeout(function(){
+				ele.style.display = "none";
+			},1500);
+		}
+	}
+}
+</script>
+</body>
+</html>

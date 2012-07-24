@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+</head>
+<script>
+var ua = navigator.userAgent.toLowerCase();
+if(ua.match(/iphone/i) || ua.match(/ipod/i)){
+		window.location="/mb/mbiphone-640.html";
+}else if(ua.match(/android/i)){
+	if(window.innerWidth>320){
+		window.location="/mb/mbandroid-480.html";
+	}else{
+		window.location="/mb/mbandroid-320.html";
+	}
+}else{
+	window.location="download.html";
+}
+</script>
+</html>

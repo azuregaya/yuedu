@@ -1,0 +1,126 @@
+/* sprite */
+.m-downslider .innerinfo ul li h5{background:url(../images/downicon.png?0201) no-repeat 9999px 9999px;}
+
+.m-downslider .innerinfo ul:after{clear:both;content:'.';display:block;height:0;visibility:hidden;}
+.m-downslider .innerinfo ul{zoom:1;}
+
+
+/* 下载切换按钮 */
+/*
+.m-tabswitch{position:absolute;top:-3px;left:344px;width:272px;z-index:100;}
+*/
+.m-tabswitch{width:912px;z-index:100;}
+.m-tabswitch ul li,.m-tabswitch ul li a{float:left;}
+.m-tabswitch ul li a{height:31px;overflow:hidden;text-indent:-9999px;}
+.m-tabswitch ul li.ipad a{width:76px;background-position:0 0;}
+.m-tabswitch ul li.iphone a{width:92px;background-position:-76px 0;}
+.m-tabswitch ul li.android a{width:104px;background-position:-168px 0;}
+.m-tabswitch ul li.ipad a:hover{background-position:0 -60px;}
+.m-tabswitch ul li.iphone a:hover{background-position:-76px -60px;}
+.m-tabswitch ul li.android a:hover{background-position:-168px -60px;}
+.m-tabswitch ul li.ipad a.j-crt{background-position:0 -120px;}
+.m-tabswitch ul li.iphone a.j-crt{background-position:-76px -120px;}
+.m-tabswitch ul li.android a.j-crt{background-position:-168px -120px;}
+/* 下载切换按钮 大*/
+.m-tabswitch-1{left:300px;}
+.m-tabswitch-1 ul{width:364px; height:31px;}
+.m-tabswitch-1 ul li a{height:44px;}
+.m-tabswitch-1 ul li.ipad a{width:101px;background-position:0 -737px;}
+.m-tabswitch-1 ul li.iphone a{width:125px;background-position:-101px -737px;}
+.m-tabswitch-1 ul li.android a{width:138px;background-position:-226px -737px;}
+.m-tabswitch-1 ul li.ipad a:hover{background-position:0 -819px;}
+.m-tabswitch-1 ul li.iphone a:hover{background-position:-101px -819px;}
+.m-tabswitch-1 ul li.android a:hover{background-position:-226px -819px;}
+.m-tabswitch-1 ul li.ipad a.j-crt{background-position:0 -898px;}
+.m-tabswitch-1 ul li.iphone a.j-crt{background-position:-101px -898px;}
+.m-tabswitch-1 ul li.android a.j-crt{background-position:-226px -898px;}
+/* 下载切换按钮 简洁*/
+.m-tabswitch-2{left:912px;border-bottom:#dedede solid 1px;height:55px;margin-left:auto;margin-right:auto; }
+.m-tabswitch-2 ul{width:660px; height:31px; padding-top:12px; margin-left:auto; margin-right:auto;}
+.m-tabswitch-2 ul li{float:left; padding:0 10px; display:inline;}
+.m-tabswitch-2 ul li a{display:block;width:123px;height:31px; text-align:center; line-height:31px; font-size:16px; padding:0 10px; float:left;color:#666;background-color:#f5f5f5;}
+.m-tabswitch-2 ul li a.j-crt{background-color:#bababa; color:#fff; text-decoration:none;}
+
+/* 下载轮播 */
+.m-downslider .js-tabcnt{width:912px;position:relative;padding:0 24px;padding-top:1px; margin-left:auto; margin-right:auto;}
+.m-downslider .js-tabcnt img{vertical-align:top;}
+.m-downslider .innerinfo{border-top:#e6e6e6 dotted 1px;margin-top:20px;}
+.m-downslider .innerinfo ul{padding:40px 30px 18px 88px;}
+.m-downslider .innerinfo ul li{width:287px;height:80px;float:left;padding-bottom:26px;}
+.m-downslider .innerinfo ul li.odd{width:307px;margin-right:135px;}
+.m-downslider .innerinfo ul li h5{height:20px;font-size:14px;line-height:20px;padding-left:25px;margin-bottom:6px;color:#838383;}
+.m-downslider .innerinfo ul li p{font-size:12px;line-height:24px;color:#4e4e4e;}
+.m-downslider .innerinfo ul li.cat01 h5{background-position:0 -17px;}
+.m-downslider .innerinfo ul li.cat02 h5{background-position:0 -124px;}
+.m-downslider .innerinfo ul li.cat03 h5{background-position:0 -195px;}
+.m-downslider .innerinfo ul li.cat04 h5{background-position:0 -52px;}
+.m-downslider .innerinfo ul li.cat05 h5{background-position:0 -160px;}
+.m-downslider .innerinfo ul li.cat06 h5{background-position:0 -89px;}
+.m-downslider .innerinfo ul li.cat07 h5{background-position:0 -228px;}
+.m-downslider .innerinfo ul li.cat08 h5{background-position:0 -261px;}
+.m-downslider .innerinfo ul li.cat09 h5{background-position:-1px -294px;}
+.m-downslider .innerinfo ul li.cat10 h5{background-position:0px -329px;}
+.m-downslider .innerinfo ul li.cat11 h5{background-position:0px -367px;}
+.m-downslider .ipad .innersec01,.m-downslider .iphone .innersec01,.m-downslider .android .innersec01{position:relative;}
+.m-downslider .ipad .innersec01 a,.m-downslider .iphone .innersec01 a.link01,.m-downslider .android .innersec01 a.link01,.m-downslider .android .innersec01 a.link02,.m-downslider .android .innersec01 a.link03,.m-downslider .android .innersec01 a.link05,.m-downslider .android .innersec01 a.link06{background-color:#fff;filter:alpha(opacity=0);opacity:0;}
+.m-downslider .ipad .innersec01 a.link01{position:absolute;display:block;width:246px;height:70px;top:243px;left:606px;text-indent:-9999px;}
+.m-downslider .ipad .innersec01 a.link02{position:absolute;display:block;width:193px;height:25px;line-height:25px;top:345px;left:602px;color:#666;text-align:center;text-decoration:none;font-size:14px;}
+.m-downslider .ipad .innersec01 a.link03{position:absolute;top:498px;left:120px;text-indent:0;color:#bf6160;font-size:14px;filter:alpha(opacity=100);opacity:1;}
+.m-downslider .iphone .innersec01 a.link01{position:absolute;width:246px;height:75px;top:242px;left:521px;text-indent:-9999px;}
+.m-downslider .iphone .innersec01 a.link02{position:absolute;cursor:default;height:90px;left:518px;text-indent:0;top:358px;width:90px;}
+.m-downslider .iphone .innersec01 a.link03{position:absolute;width:210px;height:25px;line-height:25px;top:340px;left:646px;color:#666;text-align:center;text-decoration:none;font-size:14px;}
+.m-downslider .iphone .innersec01 a.link04{position:absolute;top:429px;left:589px;text-indent:0;color:#bf6160;font-size:14px;}
+.m-downslider .iphone .innersec01 a.link05{position:absolute;width:110px;height:25px;top:369px;left:652px;font-size:14px;color:#666;}
+.m-downslider .android .innersec01 a{position:absolute;text-indent:-9999px;}
+.m-downslider .android .innersec01 a.link01{width:250px;height:70px;top:201px;left:454px;}
+.m-downslider .android .innersec01 a.link02{width:84px;height:26px;top:350px;left:520px;}
+.m-downslider .android .innersec01 a.link03{width:95px;height:26px;top:350px;left:604px;}
+.m-downslider .android .innersec01 a.link04{width:90px;height:90px;top:330px;left:452px;text-indent:0;cursor:default;}
+.m-downslider .android .innersec01 a.link05{width:60px;height:26px;top:350px;left:456px;}
+.m-downslider .android .innersec01 a.link06{width:144px;height:68px;top:292px;left:588px;}
+.m-downslider .android .innersec01 a.link07{top:400px;left:524px;text-indent:0;color:#bf6160;font-size:14px;}
+.m-downslider .androidpad .innersec01 a.link01{top:175px;left:528px;}
+.m-downslider .androidpad .innersec01 a.link02{width:180px;top:334px;left:530px;}
+.m-downslider .androidpad .innersec01 a.link04{top:309px;left:528px;}
+.m-downslider .androidpad .innersec01 a.link07{top:375px; left:564px;}
+.m-downslider .iphone-nr{background:url(../images/down4.jpg?0200) 0 0;}
+.m-downslider .android-nr{background:url(../images/down5.jpg?0200) 0 0;}
+.m-downslider .info{position:absolute;width:340px;height:100px;top:104px;left:52px;}
+.m-downslider .info p{font-size:12px;line-height:22px;}
+.m-downslider a.godown{position:absolute;display:block;width:254px;height:48px;top:212px;left:52px;text-indent:-9999px;}
+.m-downslider .android a.godown{width:304px;}
+.m-downslider a.goapk{position:absolute;top:267px;left:51px;color:#cd4544;}
+.m-downslider a.goapp{position:absolute;top:267px;left:200px;color:#cd4544;}
+.m-downslider .innersec01 .linktip{position:absolute;width:100px;height:32px;font-size:12px;color:#fff; text-align:center;}
+.m-downslider .ipad .innersec01 .linktip{top:287px;left:683px;}
+.m-downslider .ipad .innersec01 .floattip{position:absolute;top:345px;left:609px;height:25px;line-height:25px;color:#666;text-align:center;text-decoration:none;}
+.m-downslider .android .innersec01 .linktip{top:248px;left:526px;}
+.m-downslider .android .innersec01 .qr{color:#666;position:absolute;top:302px;left:454px;}
+.m-downslider .android .innersec01 a.how{display:block;text-indent:0;color:#666;position:absolute;top:255px;left:715px;}
+.m-downslider .android .innersec01 ul.linklist{position:absolute;left:595px;top:300px;}
+.m-downslider .android .innersec01 ul.linklist li{height:26px;line-height:26px;}
+.m-downslider .android .innersec01 ul.linklist li a{text-indent:0;position:static;font-size:14px;color:#666;}
+.m-downslider .iphone .innersec01 .linktip{top:288px;left:600px;}
+.m-downslider .iphone .innersec01 .qr{color:#666;position:absolute;top:337px;left:520px;}
+.m-downslider .iphone .innersec01 ul.linklist{position:absolute;left:643px;top:356px;}
+.m-downslider .iphone .innersec01 ul.linklist li{height:26px;line-height:26px;}
+.m-downslider .iphone .innersec01 ul.linklist li a{text-indent:0;position:static;font-size:14px;color:#666;}
+.m-downslider .androidpad .innersec01 .linktip{top:221px;left:601px;}
+.m-downslider .androidpad .innersec01 .qr{top:287px;left:529px;}
+.m-downslider .androidpad .innersec01 ul.linklist{left:675px;top:285px;}
+/* 修正91助手浮层bug */
+.key_float_ .ibox_box{
+	margin:0 auto;
+}
+
+/* 短信弹窗 */
+.m-smsbox{position:absolute;top:100px;left:20px;width:350px;background-color:#fff;}
+.m-smsbox h3{height:36px;line-height:36px;padding-left:16px;border-bottom:#dedede solid 1px;background-color:#f4f4f4;color:#333;font-size:14px;font-weight:normal;}
+.m-smsbox h3 a{display:block;width:24px;height:24px;float:right;background:url(../images/closex.png) 0 0 no-repeat;margin:5px 5px 0 0;}
+.m-smsbox .inner{padding:20px 10px 10px 20px;}
+.m-smsbox .inner p{margin-bottom:18px;}
+.m-smsbox .inner label{font-size:16px;color:#666;margin-left:13px;}
+.m-smsbox .inner input{display:inline-block;width:160px;padding-left:7px;height:28px;border:#999 solid 1px;font-size:14px;color:#333;}
+.m-smsbox .inner p a.btn{display:inline-block;width:84px;height:28px;line-height:28px;background-color:#f4f4f4;border:#dedede solid 1px;margin-left:77px;text-align:center;font-size:14px;}
+.m-smsbox .inner p span{padding-left:5px;font-size:12px;color:#dc7518;}
+.m-smsbox .inner p.tips{font-size:12px;color:#999;text-align:center;}

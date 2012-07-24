@@ -1,0 +1,105 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh" lang="zh">
+<head>
+<title>页面标题</title>
+<meta http-equiv="content-type" content="text/html;charset=utf-8"/>
+<meta http-equiv="content-style-type" content="text/css"/>
+<meta http-equiv="content-script-type" content="text/javascript"/>
+<meta http-equiv="x-ua-compatible" content="ie=emulateie7"/>
+<meta name="author" content="netease"/>
+<meta name="version" content="1.0"/>
+<meta name="keywords" content=""/>
+<meta name="description" content=""/>
+<link type="text/css" rel="stylesheet" href="css/style.css"/>
+<script src="js/imgslt/jquery.min.js"></script>
+<style>
+html{overflow:auto;}
+</style>
+</head>
+<body id="page-163-com">
+	<div class="g-lihd">
+		<div class="m-header">
+			<h1 class="m-logo">
+				<a href="#">网易阅读</a>
+			</h1>
+			 <div class="m-ulink"><a href="#">登录</a><span class="sep">|</span><a href="#">注册</a></div>
+		</div>
+	</div>
+	<div class="g-libd">
+		<div class="m-body">
+			<div class="inner">
+				<div class="m-inf m-inf-3">
+					<div class="w-img"><a href="#"><img alt="" src="http://imgrc.ph.126.net/AJtI1hv0YsVhxJ9t3_4LWA==/4222687600613270630.jpg"></a></div>
+					<div class="txt">
+						<h4><a href="#">耶鲁大学政治学导论</a></h4>
+						<div class="w-star w-star1"><span>&nbsp;</span><span>&nbsp;</span><span>&nbsp;</span><span>&nbsp;</span><span class="no">&nbsp;</span></div>
+						<div class="has">12121人订阅</div>
+						<div class="has">每周更新5篇</div>
+					</div>
+				</div>
+				<a class="submit">订阅</a>
+				<a class="download">马上下载</a>
+			</div>
+		</div>
+	</div>
+	
+	<div id="layer1" class="m-layer m-layer-1 f-dn">
+		<div class="lytt yy"><h4>登录网易通行证</h4><a href="#" class="lyclose j-close">关闭</a></div>
+		<div class="lyct">
+			<div class="m-login">
+				<form>
+					<div class="row"><label>帐号：</label><div class="intwrap"><span class="ipt-wrap"><input class="ipt" type="text" /></span></div></div>
+					<div class="row"><label>密码：</label><div class="intwrap"><span class="ipt-wrap"><input class="ipt" type="password" /></span></div></div>
+					<div class="row row-1">
+						<input type="checkbox"/><label class="auto">两周内自动登录</label>
+						<a href="#">忘记密码？</a>
+					</div>
+					<div class="row row-1">
+						<button><span>登录</span></button>
+						<a class="wyt" href="#">注册网易通行证&gt;&gt;</a>
+					</div>
+				</form>
+			</div>
+		</div>
+		<div class="lybt">
+			<button class="j-close">我知道了</button>
+		</div>
+	</div>
+	<div class="m-mask f-dn"></div>
+	
+<script>
+jQuery.noConflict();
+jQuery(document).ready(function(){
+	var pop = jQuery('#layer1'),mask = jQuery('.m-mask'),cls = jQuery('.j-close');
+	
+	var setPosition = function(){
+		var dh = jQuery(window).height();
+		var dt = jQuery(document).scrollTop();
+		var lh = pop.height(),lw = pop.width();
+		if(dh > lh){
+			pop.css('top',(dt+((dh-lh)/2)+"px"));
+		}else{
+			pop.css('top',(dt+((lh-dh)/2)+"px"));
+		}
+		pop.css({'left':'50%','margin-left':(-(lw/2)+"px"),'z-index':10000});
+		//jQuery('#profile').css('top');
+	}
+	
+	var showLogLayer = function() {
+		pop.toggleClass('f-dn');
+		setPosition();
+		mask.height(jQuery(document).height());
+		mask.toggleClass('f-dn');
+	};
+
+	var hideLogLayer = function() {
+		pop.toggleClass('f-dn');
+		mask.toggleClass('f-dn');
+	}
+	
+	showLogLayer();
+	cls.click(hideLogLayer);
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,223 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh" lang="zh">
+<head>
+<title>页面标题</title>
+<meta http-equiv="content-type" content="text/html;charset=gbk"/>
+<meta http-equiv="content-style-type" content="text/css"/>
+<meta http-equiv="content-script-type" content="text/javascript"/>
+<meta http-equiv="x-ua-compatible" content="ie=emulateie7"/>
+<meta name="author" content="netease"/>
+<meta name="version" content="1.0"/>
+<meta name="keywords" content=""/>
+<meta name="description" content=""/>
+<link type="text/css" rel="stylesheet" href="css/style.css"/>
+</head>
+
+<body id="page-163-com">
+<button id="btn1">弹窗1</button>
+<div id="profile"  class="m-layer m-layer-2">
+    <div class="lytt yy"><h4>编辑资料</h4><a href="#" class="lyclose j-close">关闭</a></div>
+    <div class="lyct">
+        <div class="m-sec">
+            <div class="sub">头像:</div>
+			<div class="main">
+				<div class="inner">
+					<div class="imgbox"><img src="images/tx.jpg" /></div>
+					<div class="txtbox">
+						<p class="pra1">上传新头像 <span>(支持JPG,BMP,PNG格式，最大不超过5M)</span></p>
+						<input type="button" value="选择文件" />
+						<p class="pra2">正在上传...</p>
+						<p class="pra3">网络出错导致上传失败，请重试。</p>
+					</div>
+				</div>
+			</div>
+        </div>
+		<div class="m-sec">
+            <div class="sub">昵称:</div>
+			<div class="main main-2">
+				<div class="inner">
+					<input id="nn" class="ipttxt nickname" type="text" />
+				</div>
+			</div>
+        </div>
+		<div class="m-sec">
+            <div class="sub">性别:</div>
+			<div class="main">
+				<div class="inner">
+					<p class="gender"><input type="radio" />男<input type="radio" />女</p>
+				</div>
+			</div>
+        </div>
+		<div class="m-sec">
+            <div class="sub">简介:</div>
+			<div class="main">
+				<div class="inner">
+					<textarea id="intro-area" class="ipttxt txt"></textarea>
+					<p class="intro">用简短的话语描述自己，当前已输入<span id="writed"></span>字。</p>
+				</div>
+			</div>
+        </div>
+		<div class="m-sec m-sec-1">
+            <div class="sub">标签:</div>
+			<div class="main">
+				<div class="inner">
+					<p>
+						<input id="tag-input" class="ipttxt labels" type="text" />
+						<input id="add-btn" class="add" type="button" value="贴  上"/>
+					</p>
+					<div class="tags">
+						<ul id="cur-con">
+							<li><a class="cur" href="javascript:void(0);">网易</a></li>
+							<li><a class="cur" href="javascript:void(0);">互联网</a></li>
+							<li><a class="cur" href="javascript:void(0);">UI设计师</a></li>
+							<li><a class="cur" href="javascript:void(0);">设计师</a></li>
+							<li><a class="cur" href="javascript:void(0);">暴雪</a></li>
+						</ul>
+					</div>
+					<h3>你可能感兴趣的标签：<a href="#">换一批</a></h3>
+					<div class="tags">
+						<ul id="new-con">
+							<li><a class="new" href="javascript:void(0);">网易</a></li>
+							<li><a class="new" href="javascript:void(0);">互联网001</a></li>
+							<li><a class="new" href="javascript:void(0);">互联网002</a></li>
+							<li><a class="new" href="javascript:void(0);">互联网003</a></li>
+							<li><a class="new" href="javascript:void(0);">互联网004</a></li>
+							<li><a class="new" href="javascript:void(0);">互联网005</a></li>
+							<li><a class="new" href="javascript:void(0);">互联网006</a></li>
+							<li><a class="new" href="javascript:void(0);">互联网007</a></li>
+							<li><a class="new" href="javascript:void(0);">互联网008</a></li>
+						</ul>
+					</div>
+					<p class="ttip">每个标签后面都包含着一个个精彩的内容源，给自己打上标签，有助于系统为您推荐更符合你口味的内容源。为保证标签的有效性，你最多只能设置5个标签。</p>
+					
+				</div>
+			</div>
+        </div>
+		<div class="m-sec">
+			<div class="bt">
+				<button type="button">取消</button><button type="submit">保存</button>
+			</div>
+		</div>
+    </div>
+    <div class="lybt">
+        <button class="j-close">我知道了</button>
+    </div>
+</div>
+<script type="text/javascript" src="js/yd.js"></script>
+<script>
+var setHighlight = function(){
+	var iptArr = $$('profile','ipttxt');
+	//console.log(iptArr.length);
+	for(var i=0; i<iptArr.length; i++){
+		evton(iptArr[i],'focus',function(e){
+			addClass(target(e),'focus');
+		});
+		
+		evton(iptArr[i],'blur',function(e){
+			delClass(target(e),'focus');
+		});
+	}
+}
+
+var controlWords = function(num){
+	var txt = $('intro-area'),rt = $('writed');
+	if(trim(txt.value).length > 0){
+		rt.innerHTML = trim(txt.value).length;
+	}else{
+		rt.innerHTML = 0;
+	}
+	evton(txt,'keyup',function(e){
+		rt.innerHTML = trim(txt.value).length;
+	})
+	//console.log(trim(txt.value).length);
+}
+
+var curArr = $$('profile','cur');
+var newArr = $$('profile','new');
+var curCon = $('cur-con');
+var myTags = ['网易','互联网','UI设计师','设计师','暴雪'];
+
+var delData = function(str){
+	for(var i=myTags.length; i>=0; i--){
+		if(str == myTags[i]){
+			myTags.splice(i,1);
+			console.log('减去某个值后',myTags);
+		}
+	}
+}
+
+var delTags = function(arr,ifadd){
+	if(arr.length > 0){
+		for(var i=0; i<arr.length; i++){
+			//console.log(arr[i].className.indexOf('add'));
+			if(arr[i].className.indexOf('added') < 0){
+				addClass(arr[i],'added');
+				evton(arr[i],'click',function(e){
+					if(ifadd && $$('profile','cur').length == 5) return;
+					if(!ifadd) delData(target(e).innerHTML);
+					target(e).parentNode.parentNode.removeChild(target(e).parentNode);
+				});
+			}
+			if(ifadd){
+				evton(arr[i],'click',function(e){
+					var pushTxt = target(e).innerHTML;
+					addTags(pushTxt);
+				});
+			}
+		}
+	}
+}
+
+var addTags = function(str){
+	curArr = $$('profile','cur');
+	var exist = false;
+	if(curArr.length <= 4){
+		for(var i=0; i<myTags.length; i++){
+			console.log(myTags[i]);
+			if(myTags[i] ==str) exist = true;
+			break;
+		}
+		console.log(exist);
+		if(!exist){
+			var newItem = document.createElement('li');
+			newItem.innerHTML = '<a class="cur" href="javascript:void(0);">'+str+'</a>';
+			curCon.appendChild(newItem);
+			myTags.push(str);
+			console.log(myTags);
+		}else{
+			alert('已经有重复的标签！！');
+		}
+	}else{
+		alert('标签最多5个');
+	}
+	update();
+}
+
+var update = function(){
+	curArr = $$('profile','cur');
+	delTags(curArr);
+}
+
+var setAddTags = function(){
+	var tagipt = $('tag-input'),addBtn = $('add-btn');
+	evton(addBtn,'click',function(e){
+		var iptVal = trim(tagipt.value);
+		addTags(iptVal);
+	});
+	
+}
+
+delTags(curArr);
+delTags(newArr,true);
+setAddTags();
+
+
+$("btn1").onclick= function(){
+	//layerOpen("profile",true,$('nn'));
+}
+
+setHighlight();
+controlWords(100);
+</script>
+</body>
+</html>

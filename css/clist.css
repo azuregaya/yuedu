@@ -1,0 +1,61 @@
+/* 清除浮动 */
+.m-dlist-3 ul:after{clear:both;content:'.';display:block;height:0;visibility:hidden;}
+.m-dlist-3 ul{zoom:1;}
+
+.g-bdc1{position:relative;zoom:1;width:100%;border-top:#dedede solid 1px;}
+.g-bdc1-all .g-mn{width:960px;}
+/* 侧栏 */
+.g-sd{position:relative;z-index:5;float:left;width:178px;border-left:#dedede solid 1px;}
+.g-sd2{float:right;width:240px;}
+.g-sd3{float:left;width:276px;padding:30px 24px 0;}
+.g-mn-1{border-top:#dedede solid 1px;}
+.g-mnc{min-height:352px;}
+/* 二级分类 */
+.m-menub,.m-menub h2,.m-menub .menubtm{width:100%;margin:0;}
+.m-menub{position:relative;z-index:7;}
+.m-menub h2{position:relative;height:36px;text-align:center;line-height:35px;font-size:14px;color:#666;background-position:-3px -5px;}
+.m-menub li{position:relative;z-index:2;float:left;width:100%;height:36px;line-height:36px;border-bottom:#dedede solid 1px;border-right:#dedede solid 1px;}
+.m-menub li a{position:relative;z-index:9;display:block;width:100%;height:36px;font-size:14px;text-align:center;color:#333;}
+.m-menub li.j-crt{z-index:4;border-right:none;}
+.m-menub li.j-crt a{font-weight:bold;}
+.m-menub li a span{display:none;width:4px;height:36px;position:absolute;background-color:#c00;top:0;left:0;}
+.m-menub li.j-crt a span{display:block;}
+/* 订阅列表(两列) */
+.m-dlist{overflow:hidden;}
+.m-dlist ul{float:left;display:inline;margin:-7px 0 0 -80px;border-bottom:1px solid #f0f0f0;}
+.m-dlist li{display:inline;float:left;width:286px;height:80px;padding:39px 0 39px 80px;margin:1px 0 -1px;border-bottom:1px solid #f0f0f0;}
+/* 无分割线 */
+.m-dlist-1 ul,.m-dlist-1 li{border-bottom:0;}
+/* 两列2 */
+.m-dlist-2 li{width:250px;}
+/* 两列幻灯式 */
+.m-dlist-2s{position:relative;float:left;overflow:hidden;width:660px;}
+.m-dlist-2s li{width:286px;}
+/* 三列 */
+.m-dlist-3{}
+.m-dlist-3 ul{margin-left:-8px;}
+.m-dlist-3 li{width:286px;padding:36px 10px 36px 23px;}
+/*一列式*/
+.m-dlist-4 li{width:588px;overflow:hidden;border-bottom:#f0f0f0 solid 1px;}
+.m-dlist-4 ul{margin-top:0px;margin-left:0px;}
+.m-dlist-4 ul li{padding:15px 0 15px 40px;}
+
+.m-dlist-5 ul{margin-left:65px;}
+.m-dlist-5 ul li{padding:36px 70px 36px 0px;}
+/*两列式*/
+.m-dlist-6 ul li{width:286px;overflow:hidden;border-bottom:#f0f0f0 solid 1px;padding:39px 1px 39px 30px;}
+
+/*搜索提示*/
+.m-searchtip{position:relative;margin:15px 0 0 0;}
+.m-searchtip .sbar{background-color:#fbf9ec;border:#eee9d4 solid 1px;}
+.m-searchtip .sbar p{padding:10px 24px;line-height:18px;font-size:14px;color:#666;}
+.m-searchtip .sbar p em{color:#c00;}
+.m-searchtip .tl,.m-searchtip .bl{width:912px;height:4px;overflow:hidden;}
+
+/* 搜索无结果 */
+.m-norlt{padding:30px 0 240px;}
+.m-norlt h3{font-size:18px;font-weight:normal;line-height:30px;color:#000;padding:0 0 0 105px;background: url(../images/alert.png?0200) 37px 0 no-repeat;}
+.m-norlt h3 em{color:#c00;font-weight:bold;padding:0 15px;word-wrap:break-word;}
+.m-norlt h3 span{font-size:16px;color:#999;}
+.m-norlt p{padding:38px 0 0 105px;}
+.m-norlt p a{display:block;width:89px;height:29px;line-height:29px;text-decoration:none;color:#666;text-align:center;background-color:#e9e9e9;border:#b2b2b2 solid 1px;}

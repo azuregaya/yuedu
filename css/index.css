@@ -1,0 +1,98 @@
+/* 统一背景导入 */
+.m-slider ol li,.m-lxwm h3,.m-hzhb h3,.m-lxwm ul li,.m-tit .t-hd .hd-wrap,.m-tit .t-hd .hd-wrap h4,.m-tit .t-hd a.follow,.m-tit .t-hd a.followed,.m-tit .t-bd a.up-btn,.m-tit .t-bd a.down-btn{background:url(../images/sec-index.png?0200) no-repeat 9999px 9999px;}
+
+/* 清除浮动 */
+.m-mwrap:after,.m-lxwm ul:after,.m-slider ul:after,.m-hzhb .slider ul:after{clear:both;content:'.';display:block;height:0;visibility:hidden;}
+.m-mwrap,.m-lxwm ul,.m-slider ul,.m-hzhb .slider ul{zoom:1;}
+
+/* 首页框体边界 */
+.m-main .wrapout{position:relative;z-index:10;}
+.m-main .wrapout h3{height:18px;margin-bottom:10px;text-indent:-9999px;}
+.m-main .wrapout p {font-size:14px;line-height:20px;color:#666;}
+/* 幻灯 */
+.m-slider .slider,.m-slider ul li,.m-slider ul li img{width:960px;height:600px;}
+.m-slider{position:relative;zoom:1;width:960px;height:603px;}
+.m-slider .slider{position:relative;z-index:5;overflow:hidden;margin:0 auto;}
+.m-slider ul{position:absolute;top:0;left:0;}
+.m-slider ul li{overflow:hidden;}
+.m-slider-5 ul li{position:absolute;top:0;left:0;filter:alpha(opacity=0);}
+.m-slider ul h2,.m-slider ul h3{position:absolute;overflow:hidden;text-indent:-20000px;}
+.m-slider .control{}
+.m-slider ol{position:absolute;bottom:17px;left:0;z-index:7;width:100%;text-align:center;}
+.m-slider ol li{display:inline-block;*display:inline;*zoom:1;width:12px;height:12px;margin:0 5px;overflow:hidden;text-align:center;background-position:0 -20px;}
+.m-slider ol li.j-crt{background-position:0 0;}
+.m-slider ol li span{visibility:hidden;}
+.m-slider .prv,.m-slider .nxt{position:absolute;top:50%;z-index:7;width:37px;height:63px;margin-top:-32px;overflow:hidden;text-indent:-200px;}
+.m-slider .prv{left:0px;background-position:0px -425px;}
+.m-slider .nxt{right:0px;background-position:-43px -425px;}
+.m-slider .prv:hover{background-position:0px -496px;}
+.m-slider .nxt:hover{background-position:-43px -496px;}
+
+.m-slider .downbtn{display:block;position:absolute;width:185px;height:36px;top:430px;left:560px;}
+.m-slider .downbtn2{top:431px;left:541px;}
+.m-slider .downbtn3{top:430px;left:515px;}
+.m-slider .downbtn4{top:431px;left:583px;}
+
+/* 新信息框体样式 */
+.m-mwrap{margin-top:25px;}
+.m-mwrap .sec-left{display:inline;width:625px;height:204px;float:left;position:relative;border-top:#dedede solid 1px;}
+.m-mwrap .sec-right{width:325px;height:204px;float:right;position:relative;}
+.m-mwrap .sec-left .main-sec,.m-mwrap .sec-right .main-sec{height:200px;}
+
+/* 联系我们 */
+.m-lxwm{display:inline;float:left;width:268px;margin:18px 20px 4px 24px;}
+.m-lxwm h3{background-position:0px -50px;}
+.m-lxwm ul{margin:14px 0 0 0;}
+.m-lxwm ul li{float:left;margin-right:15px;_margin-right:10px;width:30px;height:30px;color:#666;}
+.m-lxwm ul li a{display:block;width:100%;height:100%;text-indent:-9999px;}
+.m-lxwm ul li.contact a{text-indent:35px;}
+.m-lxwm ul li.twy{background-position:0px -120px;}
+.m-lxwm ul li.ttx{background-position:0px -160px;}
+.m-lxwm ul li.txl{background-position:0px -200px;}
+.m-lxwm ul li.contact{background-position:0px -240px;}
+.m-lxwm ul li.contact a{margin-top:8px;color:#666;background-position:-9999px -9999px;}
+/* 合作伙伴 */
+.m-hzhb{width:288px;padding:0 0 0 12px;display:inline;float:left;height:166px;margin:18px 0px 18px 0;}
+.m-hzhb h3{background-position:0px -80px;}
+.m-hzhb .slider{position:relative;width:288px;height:120px;margin-left:-8px;overflow:hidden;}
+.m-hzhb .slider ul{height:288px;}
+.m-hzhb li,.m-hzhb a{float:left;display:inline;width:52px;}
+.m-hzhb a{float:none;}
+.m-hzhb a.img-l{display:block;width:50px;height:50px;border:#e2e2e2 solid 1px;overflow:hidden;}
+.m-hzhb li{padding:0 10px;margin-bottom:14px;}
+.m-hzhb a{text-align:center;text-decoration:none;}
+.m-hzhb a em{display:block;text-align:center;text-decoration:none;font-family:font:12px Tahoma,simsun,arial,\5b8b\4f53;}
+.m-hzhb a span{display:block;width:50px;height:50px;border:#e2e2e2 solid 1px;overflow:hidden;*cursor:default;}
+.m-hzhb a em{height:14px;line-height:14px;font-weight:normal;margin:10px 0 0 0;color:#666;}
+/* 新联系我们样式 */
+.m-lxwm h3,.m-hzhb h3{height:18px;margin-bottom:10px;text-indent:-9999px;}
+.m-lxwm h4{margin:30px 0 10px;font-size:14px;}
+.m-lxwm p{font-size:12px;color:#666;margin-bottom:3px;}
+.m-lxwm p a{color:#666;}
+.m-tit{background-color:#fcfcfc;}
+.m-tit .t-hd{position:relative;height:70px;background-position:0 -320px;border:#dedede solid 1px;overflow:hidden;}
+.m-tit .t-hd .framewrap{margin-top:-5px}
+.m-tit .t-hd .hd-wrap{height:40px;padding-left:48px;background-position:0 -300px;}
+.m-tit .t-hd .hd-wrap h4{width:56px;height:20px;line-height:20px;padding-right:23px;background-position:60px -350px;margin-bottom:3px;}
+.m-tit .t-hd .hd-wrap h4 a{color:#000;}
+.m-tit .t-hd .hd-wrap p{display:none;}
+.m-tit .t-hd .hd-wrap p span{padding-right:8px;color:#666;}
+.m-tit .t-hd a.followed,.m-tit .t-hd a.follow{position:absolute;width:60px;height:24px;line-height:24px;top:30px;right:20px;}
+.m-tit .t-hd a.followed{color:#666;text-align:right;text-decoration:none;cursor:default;background-position:10px -542px;}
+.m-tit .t-hd a.follow{text-indent:-9999px;background-position:0 -400px;}
+.m-tit .t-hd a.follow:hover{background-position:0px -440px;}
+.m-tit .t-bd{height:134px;position:relative;padding-top:1px;border-left:#dedede solid 1px;border-right:#dedede solid 1px;border-bottom:#dedede solid 1px;}
+.m-tit .t-bd a.up-btn,.m-tit .t-bd a.down-btn{position:absolute;width:323px;height:19px;}
+.m-tit .t-bd a.up-btn{top:0;left:0;background-position:150px -476px;}
+.m-tit .t-bd a.down-btn{bottom:0px;left:0;background-position:150px -516px;}
+.m-tit .t-bd .t-show{height:98px;margin-top:18px;overflow:hidden;position:relative;}
+.m-tit ul.t-list{position:absolute;top:0;left:0;}
+.m-tit ul.t-list li{height:88px;padding:5px 20px;margin-bottom:0;}
+.m-tit ul.t-list li p{line-height:21px;color:#666;}
+.m-tit ul.t-list li p a{color:#666;}
+.m-tit ul.t-list .p-wraper{height:63px;overflow:hidden;}
+.m-tit ul.t-list .i-wraper{height:16px;overflow:hidden;margin-top:5px;position:relative;width:100%;}
+.m-tit ul.t-list .time{}
+.m-tit ul.t-list .time a{color:#bdbdbd;}
+.m-tit ul.t-list .opt{color:#cdcdcd;position:absolute;top:0;right:0;}
+.m-tit ul.t-list .opt a{color:#666;}

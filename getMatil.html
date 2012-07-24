@@ -1,0 +1,58 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+<TITLE> New Document </TITLE>
+<meta http-equiv="Content-Type" content="text/html; charset=gbk" />
+<script language="javascript" src="http://mimg.127.net/mailapi/webmailapi-2.8.min.js"></script>
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+	window.onload = function () {
+		WebmailHelper.init();
+		fGetContact();
+	}
+	function fGetContact() {
+		WebmailHelper.getContacts({
+			call : function (oData) {
+				var arr = []
+				var aContactList = [];
+				var aContact = oData[0];
+				var aGroup = oData[1];
+				for (var i=0; i<aContact.length; i++) {
+					var oContact = aContact[i];
+					var aGroupInfo = [];
+					if(oContact.groups){
+						for (var j=0; j<oContact.groups.length; j++) {
+							aGroupInfo.push(fGetGroupInfo(oContact.groups[j], aGroup))
+						}
+					}
+					arr.push(oContact["EMAIL;PREF"]);
+					aContactList.push("" + 
+					"名称 : " + oContact["FN"] + "<br>" + 
+					"地址 : " + oContact["EMAIL;PREF"] + "</a><br>" + 
+					"手机 : " + (oContact["TEL;CELL"] || "") + "<br>" + 
+					"组信息 : " + aGroupInfo.join(",") + "<br>" 
+					);
+				}
+				window.parent.MC.mailCall(arr);
+				document.getElementById("dvContactList").innerHTML = aContactList.join("<br><br>");
+			},
+			withGroup : true
+		});
+	}
+
+	function fGetGroupInfo(sId, aGroup) {
+		for (var i=0; i<aGroup.length; i++) {
+			if(aGroup[i].id == sId){
+				return aGroup[i].name;
+			}
+		}
+	}
+//-->
+</SCRIPT>
+ </HEAD>
+
+<BODY>
+
+<div id="dvContactList"></div>
+ </BODY>
+</HTML>
