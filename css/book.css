@@ -144,6 +144,7 @@
 .m-volume h4 b{display:block;float:left;margin:4px 5px 0 0;width:3px;height:16px;background-color:#cc0000;}
 .m-chapter ul li{position:relative;height:39px;line-height:39px;overflow:hidden;border-bottom:#bcbcbc dashed 1px;}
 .m-chapter ul li a{font-size:14px;color:#2a2a2a;}
+.m-chapter ul li a.buy{color:#999;}
 .m-chapter ul li a span{display:inline-block;width:21px;padding-left:3px;text-indent:-9999px;background-position:3px -125px;}
 .m-chapter ul li .left{width:310px;padding-left:20px;float:left;overflow:hidden;}
 .m-chapter ul li .right{width:310px;padding-left:20px;float:right;overflow:hidden;}
