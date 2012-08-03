@@ -22,12 +22,12 @@
 	});
 	
 	/* 发送更多请求 */
-	var pages = 0;
+	var pages = 1;
 	var addMore = function(url){
 		var sendURL = url;
 		$.ajax({
 			url : sendURL,
-			data : [pages],
+			data : {"page":pages},
 			dataType : 'json',
 			success : function(data){
 				if(data.resultCode == 0){//返回更改数据，只有购物车页面有
@@ -70,4 +70,6 @@
 			addMore(url);
 		}
 	});
+	
+	addMore($('#J_Addmore').attr('data'));
 })();

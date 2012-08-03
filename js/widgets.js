@@ -125,6 +125,40 @@ YD.popTipLayer = function(str){
 	YD.openLayer('#infoTip');
 };
 
+/*******************浮层********************/
+YD.createLayer = function(options){
+	var settings = {};
+	var defaults = {
+		id : 1,
+		size : 1,
+		type : 1,
+		title : "",
+		content : "",
+		openby : "screen",
+		callback : null
+	};
+	settings = $.extend({},defaults,options);
+	
+	if($('#'+settings.id).length == 0){
+		var layerHTML = 
+		'<div id="J_NY1" class="m-newlayer m-newlayer-s1" style="display:none;">\
+			<h2><span>这里是标题</span><a href="javascript:void(0)" class="j-close"></a></h2>\
+			<div class="inner">\
+				<div class="content">\
+					<p>sdfdfas</p>\
+				</div>\
+				<div class="button">\
+					<a class="cc j-close">取&nbsp;&nbsp;消</a>\
+					<a class="ok">确&nbsp;&nbsp;定</a>\
+				</div>\
+			</div>\
+		</div>';
+		$('.g-doc').append(layerHTML);
+	}
+	
+	YD.openLayer('#J_NY1');
+}
+
 /*******************打开弹窗********************/
 YD.openLayer = function(_id){
 	var box = $(_id),bWidth = box.width(), bHeight = box.height(), winWidth = $(window).width(),winHeight = $(window).height();

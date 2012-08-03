@@ -49,7 +49,8 @@ var chapterSet = (function(){
 					
 				});
 				amount = (Math.round(amount*100))/100;
-				$('#J_SelectSum').text(amount+'元');
+				$('#J_SelectSum').text(amount+'读书币');
+				$('#J_RMB').text(amount/100);
 			}
 		}
 	})();
@@ -76,7 +77,6 @@ var chapterSet = (function(){
 					$.each(_data[idx].chapters,function(num){
 						listHTML += '<tr><td class="cpt cpt-1"><span>' + _data[idx].chapters[num].chapterTitle + '</span></td>';
 						listHTML += '<td>' + _data[idx].chapters[num].words + '</td>';
-						listHTML += '<td>' + _data[idx].chapters[num].perPrice + '</td>';
 						listHTML += '<td class="amount amount-t">' + _data[idx].chapters[num].chapPrice +'</td></tr>';
 					});
 					chapTable.append(listHTML);
@@ -97,6 +97,11 @@ var chapterSet = (function(){
 			processData(data);
 			
 			$('.j-alldone').unbind().click(function(e){
+				e.preventDefault();
+				openLayer.closeLayer('#J_ChapSelect');
+			});
+
+			$('.j-cancel').unbind().click(function(e){
 				e.preventDefault();
 				openLayer.closeLayer('#J_ChapSelect');
 			});

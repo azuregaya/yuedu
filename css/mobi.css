@@ -51,6 +51,7 @@ body{background-color:#f7f7f7;}
 .m-inner h3{padding-left:1em;font-size:1.2em;line-height:1.5em;background-color:#dedede;color:#666;font-weight:normal;}
 .m-inner p{font-size:1em;}
 .m-inner p.intro{padding:1em;line-height:2em;}
+.m-inner p.intro-1{padding:0.8em 1em;line-height:1em;}
 
 ul.m-list li{padding:1em;border-bottom:#dedede solid 1px;}
 ul.m-list li:last-child{border-bottom:none;}

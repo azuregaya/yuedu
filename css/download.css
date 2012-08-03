@@ -36,9 +36,9 @@
 .m-tabswitch-1 ul li.android a.j-crt{background-position:-226px -898px;}
 /* 下载切换按钮 简洁*/
 .m-tabswitch-2{left:912px;border-bottom:#dedede solid 1px;height:55px;margin-left:auto;margin-right:auto; }
-.m-tabswitch-2 ul{width:660px; height:31px; padding-top:12px; margin-left:auto; margin-right:auto;}
+.m-tabswitch-2 ul{width:853px; height:31px; padding-top:12px; margin-left:auto; margin-right:auto;}
 .m-tabswitch-2 ul li{float:left; padding:0 10px; display:inline;}
-.m-tabswitch-2 ul li a{display:block;width:123px;height:31px; text-align:center; line-height:31px; font-size:16px; padding:0 10px; float:left;color:#666;background-color:#f5f5f5;}
+.m-tabswitch-2 ul li a{display:block;width:128px;height:31px; text-align:center; line-height:31px; font-size:16px; padding:0 10px; float:left;color:#666;background-color:#f5f5f5;}
 .m-tabswitch-2 ul li a.j-crt{background-color:#bababa; color:#fff; text-decoration:none;}
 
 /* 下载轮播 */
@@ -61,8 +61,8 @@
 .m-downslider .innerinfo ul li.cat09 h5{background-position:-1px -294px;}
 .m-downslider .innerinfo ul li.cat10 h5{background-position:0px -329px;}
 .m-downslider .innerinfo ul li.cat11 h5{background-position:0px -367px;}
-.m-downslider .ipad .innersec01,.m-downslider .iphone .innersec01,.m-downslider .android .innersec01{position:relative;}
-.m-downslider .ipad .innersec01 a,.m-downslider .iphone .innersec01 a.link01,.m-downslider .android .innersec01 a.link01,.m-downslider .android .innersec01 a.link02,.m-downslider .android .innersec01 a.link03,.m-downslider .android .innersec01 a.link05,.m-downslider .android .innersec01 a.link06{background-color:#fff;filter:alpha(opacity=0);opacity:0;}
+.m-downslider .ipad .innersec01,.m-downslider .iphone .innersec01,.m-downslider .android .innersec01,.m-downslider .wp7 .innersec01{position:relative;}
+.m-downslider .ipad .innersec01 a,.m-downslider .iphone .innersec01 a.link01,.m-downslider .android .innersec01 a.link01,.m-downslider .android .innersec01 a.link02,.m-downslider .android .innersec01 a.link03,.m-downslider .android .innersec01 a.link05,.m-downslider .android .innersec01 a.link06,.m-downslider .wp7 .innersec01 .link01{background-color:#fff;filter:alpha(opacity=0);opacity:0;}
 .m-downslider .ipad .innersec01 a.link01{position:absolute;display:block;width:246px;height:70px;top:243px;left:606px;text-indent:-9999px;}
 .m-downslider .ipad .innersec01 a.link02{position:absolute;display:block;width:193px;height:25px;line-height:25px;top:345px;left:602px;color:#666;text-align:center;text-decoration:none;font-size:14px;}
 .m-downslider .ipad .innersec01 a.link03{position:absolute;top:498px;left:120px;text-indent:0;color:#bf6160;font-size:14px;filter:alpha(opacity=100);opacity:1;}
@@ -108,6 +108,9 @@
 .m-downslider .androidpad .innersec01 .linktip{top:221px;left:601px;}
 .m-downslider .androidpad .innersec01 .qr{top:287px;left:529px;}
 .m-downslider .androidpad .innersec01 ul.linklist{left:675px;top:285px;}
+.m-downslider .wp7 .innersec01 .linktip{top: 253px;left: 561px;}
+.m-downslider .wp7 .innersec01 a.link01{position:absolute;display:block;width:246px;height:70px;top:207px;left:488px;text-indent:-9999px;}
+.m-downslider .wp7 .innersec01 a.link02{position:absolute;display:block;top:300px;left:488px;font-size: 14px;color: #666;}
 /* 修正91助手浮层bug */
 .key_float_ .ibox_box{
 	margin:0 auto;

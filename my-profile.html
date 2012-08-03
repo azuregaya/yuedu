@@ -130,16 +130,6 @@
 							<div class="m-wb">
 								<ul>
 									<li>
-										<div class="item xl" prop="xl">
-											<div class="img"><img src="images/icons/32-weibo.png" width="32" height="32" onerror="if (!this.tried) {this.tried = true; this.src='images/icons/32-weibo.png'"; /></div>
-											<div class="info">
-												<h6>微博昵称</h6>
-												<p>未绑定</p>
-											</div>
-											<div class="btn"><a class="j-bind j-bind-0 s0" href="http://www.taobao.com">绑 &nbsp;定</a></div>
-										</div>
-									</li>
-									<li>
 										<div class="item wy" prop="wy">
 											<div class="img"><img src="images/tx.jpg" width="32" height="32" onerror="if (!this.tried) {this.tried = true; this.src='images/icons/32-163weibo.png'"; /></div>
 											<div class="info">
@@ -147,6 +137,16 @@
 												<a href="#">http://www.google.com.hk</a>
 											</div>
 											<div class="btn"><a class="j-bind j-bind-1 s1" href="http://www.taobao.com">解除绑定</a></div>
+										</div>
+									</li>
+									<li>
+										<div class="item xl" prop="xl">
+											<div class="img"><img src="images/icons/32-weibo.png" width="32" height="32" onerror="if (!this.tried) {this.tried = true; this.src='images/icons/32-weibo.png'"; /></div>
+											<div class="info">
+												<h6>微博昵称</h6>
+												<p>未绑定</p>
+											</div>
+											<div class="btn"><a class="j-bind j-bind-0 s0" href="http://www.taobao.com">绑 &nbsp;定</a></div>
 										</div>
 									</li>
 									<li>
@@ -484,6 +484,16 @@ var setWeibo = function(type,url,link,name){//设置微博信息[xl,wy,qq,rr,sh,
 
 //setWeibo('sh','images/tx.jpg','http://www.taobao.com','东北方法是');
 
+var popTip = function(str){
+	var structure = '<div id="J_FIXED" class="m-tipss" style="display:none;"><div id="J_TIPS" class="inner"></div></div>';
+	if(jQuery('#J_FIXED').length == 0){
+		jQuery('.g-doc').prepend(structure);
+	}
+	var _tip = str, box = jQuery('#J_TIPS');
+	box.empty().text(_tip);
+	box.parent().fadeIn(300).delay(3000).fadeOut(300);
+};
+
 var unbindEvent = function(){
 	jQuery('.m-popup-wb .j-close').click(function(){
 		jQuery('.m-popup-wb').hide();
@@ -503,8 +513,7 @@ var unbindEvent = function(){
 				}else if(data.resultCode === 1){//解绑成功
 					setNormal();
 					crtBtn.addClass('j-bind-0 s0').removeClass('j-bind-1 s1').html('绑 &nbsp;定');
-					jQuery('#J_WPop2 .inner p').text('解绑成功！');
-					jQuery('#J_WPop2').css({'top':toff,'left':loff}).show();
+					popTip('解绑成功！');
 				}else{
 					//失败情况
 					jQuery('#J_WPop2 .inner p').text('解绑失败，请稍候再试！');

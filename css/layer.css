@@ -157,3 +157,29 @@
 .cxt-input-cxt div{width:256px;padding:0 2px;white-space:nowrap;cursor:pointer;}
 .cxt-input-cxt .hint{font-weight:bold;cursor:default;}
 .cxt-input-cxt .cur{background:#eee;}
+
+/* 2.5.0官网新浮层样式 */
+.m-newlayer{position: absolute;background-color: #fff;border:#dedede solid 1px;box-shadow:1px 1px 2px #aaa;}
+.m-newlayer h2{position:relative;padding-left:20px;height:36px;line-height:36px;color:#333;font-size:16px;font-weight:normal;background-color:#f4f4f4;border-bottom:#dedede solid 1px;}
+.m-newlayer h2 span{display:inline-block;width: 80%;height:36px;overflow: hidden;}
+.m-newlayer h2 a{position:absolute;display:block;width:24px;height:24px;background:url(../images/closex.png) 0 0 no-repeat;top:6px;right: 10px;}
+.m-newlayer .inner{padding: 20px;}
+
+.m-newlayer .inner .button:after{clear:both;content:'.';display:block;height:0;visibility:hidden;}
+.m-newlayer .inner .button{clear: both;zoom:1;}
+.m-newlayer .inner .button a{display:block;width:70px;height:24px;margin-left:13px;line-height:24px;float:right;text-align:center;}
+.m-newlayer .inner .button a.ok{background-color:#d24130;border:#b82c1d solid 1px;color:#fff;}
+.m-newlayer .inner .button a.cc{background-color:#f8f8f8;border:#bfbfbf solid 1px;color:#999;}
+/* 不同宽度 */
+.m-newlayer-s1{width:350px;}
+.m-newlayer-s2{width:450px;}
+.m-newlayer-s3{width:650px;}
+
+.m-popup-wb{width:350px;height:160px;background-color:#fff;}
+.m-popup-wb h3{padding-left:20px;height:36px;line-height:36px;color:#333;font-size:16px;background-color:#f4f4f4;border-bottom:#dedede solid 1px;}
+.m-popup-wb h3 .j-close{display:block;width:24px;height:24px;float:right;background:url(../images/closex.png) 0 0 no-repeat;margin:5px 5px 0 0;_position:absolute;_top:5px;_right: 5px;}
+.m-popup-wb .inner{padding:15px;}
+.m-popup-wb .inner p{font-size:16px;color:#999;text-align:center;padding:15px 0 30px;}
+.m-popup-wb .inner .bt a{display:block;width:70px;height:24px;margin-left:13px;line-height:24px;float:right;text-align:center;}
+.m-popup-wb .inner .bt a.ok{background-color:#d24130;border:#b82c1d solid 1px;color:#fff;}
+.m-popup-wb .inner .bt a.cancelbtn{background-color:#f8f8f8;border:#bfbfbf solid 1px;color:#999;}

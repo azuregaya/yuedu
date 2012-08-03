@@ -57,10 +57,10 @@ var chapterSet = (function(){
 			},
 			selectVol : function(tarNum){
 				for(var i=0;i<=tarNum;i++){
-					if($('.j-chapSec'+i+':checked').length == 0){
-						$('#J_Volumn'+i)[0].checked = false;
-					}else{
+					if($('.j-chapSec'+i+':checked').length == $('.j-chapSec'+i).length){
 						$('#J_Volumn'+i)[0].checked = true;
+					}else{
+						$('#J_Volumn'+i)[0].checked = false;
 					}
 				}
 			},
@@ -115,7 +115,7 @@ var chapterSet = (function(){
 	})();
 	
 	var chapterOps = (function(){
-		var chapTable = $('#J_ChapTable'),allDone = $('.j-alldone'), clicked,tarPrice,tarChap,sendURL,id,form = $('#J_M_ConfirmOrder');
+		var chapTable = $('#J_ChapTable'),clicked,tarPrice,tarChap,sendURL,id,form = $('#J_M_ConfirmOrder'),amount,remain;
 		
 		return {
 			setBID : function(bid){
@@ -155,12 +155,36 @@ var chapterSet = (function(){
 				}
 			},
 			calSum : function(){
-				var amount = 0;
+				amount = 0;
 				$('#J_Chapter .ccb:checked').each(function(){
 					amount += $(this).parent().parent().find('.amount').text()*1;
 				});
 				amount = (Math.round(amount*100))/100;
-				$('#J_SelectSum').text(amount+'元');
+				$('.j-chaptatol').text(amount+'读书币');
+				$('.j-rmb').text(amount/100);
+				chapterOps.checkRemain();
+			},
+			setRemain : function (num){
+				remain = num*1;
+				$('.j-remain').text(remain);
+			},
+			checkRemain : function (){
+				if(amount <= remain){
+					$('#J_CantGo').hide();
+					$('#J_CanGo').show();
+					$('#J_AutoSub')[0].disabled = '';
+				}else{
+					$('#J_CantGo').show();
+					$('#J_CanGo').hide();
+					$('#J_AutoSub')[0].disabled = 'disabled';
+				}
+			},
+			checkSub : function (str){
+				if(str && str == "checked"){
+					$('#J_AutoSub')[0].checked = true;
+				}else if(str && str == "unchecked"){
+					$('#J_AutoSub')[0].checked = false;
+				}
 			},
 			sendChap : function(){//发送已经选择的章节
 				var iptSelected = $('#J_Chapter .ccb:checked'),valArr = [];
@@ -217,7 +241,6 @@ var chapterSet = (function(){
 					listHTML += '<tr><td><input name="article_uuid" class="ccb volumn' + idx +' j-chapSec' + idx + '" type="checkbox" series="'+ idx +'" checked="true" value="' + _data[idx].chapters[num].chapterID + '" /></td>';
 					listHTML += '<td class="cpt"><span>' + _data[idx].chapters[num].chapterTitle + '</span></td>';
 					listHTML += '<td>' + _data[idx].chapters[num].words + '</td>';
-					listHTML += '<td>' + _data[idx].chapters[num].perPrice + '</td>';
 					listHTML += '<td class="amount">' + _data[idx].chapters[num].chapPrice +'</td></tr>';
 				});
 				
@@ -226,6 +249,8 @@ var chapterSet = (function(){
 			
 			selectOps.init('#J_Chapter .ccb');
 			chapterOps.setLength();
+			chapterOps.setRemain(data[0].remain);
+			chapterOps.checkSub(data[0].substate);
 			$.each(_data,function(idx){
 				var group = $('.j-chapSec'+idx);
 				$.each(_data[idx].chapters,function(num){
@@ -240,14 +265,11 @@ var chapterSet = (function(){
 			
 			$('#J_Chapter .ccb').click(function(){
 				var s = $(this).attr('series');
-				if(this.checked){
+				
+				if($('.volumn'+s+':checked').length == $('.volumn'+s).length){
 					$('#J_Volumn'+s)[0].checked = true;
 				}else{
-					if($('.volumn'+s+':checked').length == 0){
-						$('#J_Volumn'+s)[0].checked = false;
-					}else{
-						$('#J_Volumn'+s)[0].checked = true;
-					}
+					$('#J_Volumn'+s)[0].checked = false;
 				}
 				chapterOps.calSum();
 			});
@@ -289,7 +311,7 @@ var chapterSet = (function(){
 			e.preventDefault();
 			chapterOps.checkNone();
 		});
-		$('.j-cansel').unbind().click(function(){//取消按钮
+		$('.j-cancel').unbind().click(function(){//取消按钮
 			openLayer.closeLayer('#J_ChapSelect');
 			if(ifCart){
 				selectOps.init('#J_Cart .ccb');

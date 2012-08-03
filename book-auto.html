@@ -50,82 +50,111 @@
 		</div>
 	</div>
 	
-	<div class="g-bdw">
+	<div class="g-bdw g-bdw-1">
     <div class="g-bd">
         <div class="g-bdc">
             <div class="g-mn g-mn-1 g-mn-2">
                 <div class="g-mnc">
-					<h3 class="m-confirmhead">结算</h3>
-					<div class="m-order">
+					<div class="m-bookcart m-bookcart-1">
+						<!-- 自动订阅为空
+						<div class="hint"><p>您尚无消费记录，去<a href="#">内容中心-书籍</a>看看</p></div>
+					-->
+						<div class="hint"><p>已定阅</p></div>
+						<form id="J_AutoSub">
 						<table>
+							<colgroup valign="middle">
+								<col>
+								<col width="299">
+								<col width="200">
+							</colgroup>
 							<thead>
 								<tr>
-									<th>书籍名称</th>
-									<th width="312">本次购买</th>
-									<th width="312" class="aside">实付款（读书币）</th>
+									<th>作品名称</th>
+									<th>订阅时间</th>
+									<th class="side">已自动订阅章节数</th>
 								</tr>
 							</thead>
 							<tbody>
 								<tr>
-									<td class="book">
-										<a href="#" target="_blank">倚天屠龙记极乐宝鉴特别版特别版倚天屠龙倚天屠龙倚天屠龙</a>
+									<td class="items">
+										<input class="cb j-cb" type="checkbox"><a href="#">倚天屠龙记极乐宝鉴特别版特别版</a>
 									</td>
-									<td class="chapter">
-										<a class="j-chap" href="javascript:;" data="abba0000">共45章</a>
+									<td>
+										2012.07.20  10:52:52
 									</td>
-									<td class="aside">
-										9986
-									</td>
-								</tr>
-								<tr>
-									<td class="book">
-										<a href="#" target="_blank">倚天屠龙记极乐宝鉴特别版特别版倚天屠龙</a>
-									</td>
-									<td class="chapter">
-										<a class="j-chap" href="javascript:;" data="abba0000">共45章</a>
-									</td>
-									<td class="aside">
-										9986
+									<td class="side">
+										54章
 									</td>
 								</tr>
 								<tr>
-									<td class="book">
-										<a href="#" target="_blank">倚天屠龙记极乐宝鉴特别版特别版倚天屠龙</a>
+									<td class="items">
+										<input class="cb j-cb" type="checkbox"><a href="#">倚天屠龙记极乐宝鉴特别版特别版</a>
 									</td>
-									<td class="chapter">
-										<a class="j-chap" href="javascript:;" data="abba0000">共45章</a>
+									<td>
+										2012.07.20  10:52:52
 									</td>
-									<td class="aside">
-										9986
+									<td class="side">
+										54章
 									</td>
 								</tr>
 								<tr>
-									<td class="book">
-										<a href="#" target="_blank">倚天屠龙记极乐宝鉴特别版特别版倚天屠龙</a>
+									<td class="items">
+										<input class="cb j-cb" type="checkbox"><a href="#">倚天屠龙记极乐宝鉴特别版特别版</a>
 									</td>
-									<td class="chapter">
-										<a class="j-chap" href="javascript:;" data="abba0000">共45章</a>
+									<td>
+										2012.07.20  10:52:52
 									</td>
-									<td class="aside">
-										9986
+									<td class="side">
+										54章
 									</td>
+								</tr>
+								<tr>
+									<td class="items">
+										<input class="cb j-cb" type="checkbox"><a href="#">倚天屠龙记极乐宝鉴特别版特别版</a>
+									</td>
+									<td>
+										2012.07.20  10:52:52
+									</td>
+									<td class="side">
+										54章
+									</td>
+								</tr>
+								<tr class="bt">
+									<td class="items side" colspan="3"><input id="J_Select" class="cb" type="checkbox">全选/反选 <a id="J_Unsub" href="javascript:;">退订</a></td>
 								</tr>
 							</tbody>
 						</table>
+						</form>
+						<div class="g-mnc" style="position:static;">
+							<div class="m-nr">
+								<div class="m-page">
+									<a class="go go-p" href="#">上一页</a>
+									<span class="nums">
+										<a class="j-crt" href="#">1</a>
+										<span class="dian">...</span>
+										<a href="#">2</a>
+										<a href="#">3</a>
+										<a href="#">4</a>
+										<a href="#">5</a>
+										<a href="#">6</a>
+										<a href="#">7</a>
+										<a href="#">8</a>
+										<span class="dian">...</span>
+										<a href="#">9</a>
+									</span>
+									<a class="go go-n" href="#">下一页</a>
+								</div>
+							</div>
+						</div>
 					</div>
-					<div class="g-mnc" style="position:static;">
-						<div class="m-sum">
-							<p><em>共需消费：</em><span>10读书币</span>(0.01元)</p>
-							<p>帐号余额：5600读书币</p>	
-							<p class="bt"><a class="gopay" href="#">购&nbsp;&nbsp;买</a></p>
-						</div>
-					<!--
-						<div class="m-sum">
-							<p><em>共需消费：</em><span>10读书币</span>(0.01元)</p>
-							<p>帐号余额：0读书币<span class="warning">余额不足</span>去<span class="getcoin"><a href="#">充值</a></span></p>	
-							<p class="bt"><a class="gopay gopay-1" href="javascript:;">购&nbsp;&nbsp;买</a></p>
-						</div>
-					-->
+					<div class="m-tags">
+						<ul>
+							<li class="grzx ul"><a href="#">个人中心</a></li>
+							<li class="yecx ul"><a href="#">余额查询</a></li>
+							<li class="xfjl"><a href="#">消费记录</a></li>
+							<li class="zddy crt"><a href="#">自动订阅</a></li>
+							<li class="wdsd"><a href="#">我的书单</a></li>
+						</ul>
 					</div>
                 </div>
             </div>
@@ -144,82 +173,69 @@
             </div>
         </div>
     </div>
-
-</div>
-<div id="J_ChapSelect" class="m-chapters" style="display:none;">
-	<div class="m-emptycon" style="display:none;">章节选择没有内容</div>
-	<div class="m-headtop">
-		<h3>请选择您要购买的章节<a href="javascript:void(0);" class="j-cancel w-close"></a></h3>
-	</div>
-	<div class="m-fullcon">
-		<table id="J_Chapter">
-			<colgroup valign="middle">
-				<col>
-				<col width="110">
-				<col width="160">
-			</colgroup>
-			<thead>
-				<tr>
-					<th>章节</th>
-					<th>字数</th>
-					<th>实付款（读书币）</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<td colspan="3" style="border-top: #c6c6c6 solid 1px;">
-						<div id="J_ChapCorl">
-							<table>
-								<colgroup valign="middle">
-									<col>
-									<col width="100">
-									<col width="150">
-								</colgroup>
-								<tbody id="J_ChapTable" class="m-innertable">
-								</tbody>
-							</table>
-						</div>
-					</td>
-				</tr>
-			</tbody>
-		</table>
-		<div class="m-chapdone">
-			<p><em>共需消费：</em><span id="J_SelectSum" class="j-chaptatol"></span>(<span id="J_RMB" class="j-rmb"></span>元)</p>
-			<p><a class="j-alldone ok btn" href="javascript:void(0);">确定</a></p>
+<div class="m-newlayer m-newlayer-s1">
+	<h2><span>这里是标题</span><a href="javascript:void(0)" class="j-close"></a></h2>
+	<div class="inner">
+		<div class="content">
+			<p>sdfdfas</p>
+		</div>
+		<div class="button">
+			<a class="cc j-close">取&nbsp;&nbsp;消</a>
+			<a class="ok">确&nbsp;&nbsp;定</a>
 		</div>
 	</div>
 </div>
+</div>
 <script src="js/widgets.js"></script>
 <script src="js/header.js"></script>
-<script src="js/chapter-s.js"></script>
 <script>
 (function(){
-	
-	var chapterQuery = function(){
-		$('.j-chap').click(function(){
-			var data = $(this).attr('data');
-			if(data){
-				$.ajax({
-					type: 'GET',
-					url: 'data/json23.js',
-					dataType: 'json',
-					success : function(data){
-						if(data){
-							chapterSet.init(data);
-						}else{
-							YD.popTip('出错了，请稍候再试');
-						}
-					},
-					error : function(){
-						
-					}
+	var selectOps = (function(){
+		var items;
+		return {
+			selectAll : function(){
+				items.each(function(){
+					this.checked = true;
 				});
+			},
+			selectNone : function(){
+				items.each(function(){
+					this.checked = false;
+				});
+			},
+			tickCheck : function(){
+				if($('input.j-cb:checked').length == items.length){
+					$('#J_Select')[0].checked = true;
+				}else{
+					$('#J_Select')[0].checked = false;
+				}
+			},
+			init : function(){
+				items = $('.j-cb');
+			}
+		}
+	})();
+
+	var eventBind = function  () {
+		$('#J_Select').click(function(){
+			if(this.checked){
+				selectOps.selectAll();
+			}else{
+				selectOps.selectNone();
 			}
 		});
-		
-	};
+
+		$('.j-cb').click(function(){
+			selectOps.tickCheck();
+		});
+
+		$('#J_Unsub').click(function(){
+			YD.createLayer({id:'J_NY1'});
+		});
+	}
 	
-	chapterQuery();
+	selectOps.init();
+	eventBind();
 })();
 </script>
 </body>

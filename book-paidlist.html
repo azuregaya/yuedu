@@ -50,82 +50,126 @@
 		</div>
 	</div>
 	
-	<div class="g-bdw">
+	<div class="g-bdw g-bdw-1">
     <div class="g-bd">
         <div class="g-bdc">
             <div class="g-mn g-mn-1 g-mn-2">
                 <div class="g-mnc">
-					<h3 class="m-confirmhead">结算</h3>
-					<div class="m-order">
+					<div class="m-bookcart m-bookcart-1">
+						<!-- 消费记录为空
+						<div class="hint"><p>您尚无消费记录，去<a href="#">内容中心</a>看看</p></div>
+					-->
+						<div class="hint hint-3">
+							<p>查看消费记录
+							<select id="J_Select">
+								<option data-msg="最近一个月" value="1M">最近一个月</option>
+								<option data-msg="最近三个月" value="3M">最近三个月</option>
+								<option data-msg="最近半年" value="6M">最近半年</option>
+								<option data-msg="最近一年" value="12M">最近一年</option>
+							</select>
+							</p>
+						</div>
+						<form id="J_Confirm">
 						<table>
+							<colgroup valign="middle">
+								<col width="118">
+								<col >
+								<col width="200">
+								<col width="118">
+								<col width="118">
+								<col width="118">
+							</colgroup>
 							<thead>
 								<tr>
-									<th>书籍名称</th>
-									<th width="312">本次购买</th>
-									<th width="312" class="aside">实付款（读书币）</th>
+									<th>消费时间</th>
+									<th>作品名称</th>
+									<th>购买章节</th>
+									<th>消费类型</th>
+									<th>金额（读书币）</th>
+									<th class="side">操作</th>
 								</tr>
 							</thead>
 							<tbody>
 								<tr>
-									<td class="book">
-										<a href="#" target="_blank">倚天屠龙记极乐宝鉴特别版特别版倚天屠龙倚天屠龙倚天屠龙</a>
+									<td>
+										<p>2012.7.24</p>
+										<p>10:22:22</p>
 									</td>
-									<td class="chapter">
-										<a class="j-chap" href="javascript:;" data="abba0000">共45章</a>
+									<td class="name">
+										<a href="#">倚天屠龙记极乐宝鉴特别版特别版</a>
 									</td>
-									<td class="aside">
-										9986
+									<td>
+										<a class="j-chap" href="javascript:void(0);" data="abbababba">共45章</a>
 									</td>
-								</tr>
-								<tr>
-									<td class="book">
-										<a href="#" target="_blank">倚天屠龙记极乐宝鉴特别版特别版倚天屠龙</a>
+									<td>
+										按章购买
 									</td>
-									<td class="chapter">
-										<a class="j-chap" href="javascript:;" data="abba0000">共45章</a>
-									</td>
-									<td class="aside">
-										9986
-									</td>
-								</tr>
-								<tr>
-									<td class="book">
-										<a href="#" target="_blank">倚天屠龙记极乐宝鉴特别版特别版倚天屠龙</a>
-									</td>
-									<td class="chapter">
-										<a class="j-chap" href="javascript:;" data="abba0000">共45章</a>
-									</td>
-									<td class="aside">
-										9986
+									<td>
+										700
+									</td>	
+									<td class="ops side">
+										<a class="j-share" href="javascript:;">分享</a>
 									</td>
 								</tr>
 								<tr>
-									<td class="book">
-										<a href="#" target="_blank">倚天屠龙记极乐宝鉴特别版特别版倚天屠龙</a>
+									<td>
+										<p>2012.7.24</p>
+										<p>10:22:22</p>
 									</td>
-									<td class="chapter">
-										<a class="j-chap" href="javascript:;" data="abba0000">共45章</a>
+									<td class="name">
+										<a href="#">倚天屠龙记极</a>
 									</td>
-									<td class="aside">
-										9986
+									<td>
+										倚天屠龙记极乐宝鉴特别版特别版
+									</td>
+									<td>
+										按章购买
+									</td>
+									<td>
+										700
+									</td>	
+									<td class="ops side">
+										<a class="j-share" href="javascript:;">分享</a>
 									</td>
 								</tr>
 							</tbody>
 						</table>
+						</form>
+						<div class="tip" style="display:none;">
+							<p>您的购书单还是空的，您可以去<a href="#">内容中心</a>&gt;<a href="#">书籍</a></p>
+							<p>看看有没有感兴趣的书</p>
+						</div>
+						<div class="g-mnc" style="position:static;">
+							<div class="hint hint-3"><p>共计消费：50读书币</p></div>
+						</div>
+						<div class="m-nr">
+							<div class="m-page">
+							    <a href="#" class="go go-p">上一页</a>
+							    <span class="nums">
+							        <a href="#" class="j-crt">1</a>
+							        <span class="dian">...</span>
+							        <a href="#">2</a>
+							        <a href="#">3</a>
+							        <a href="#">4</a>
+							        <a href="#">5</a>
+							        <a href="#">6</a>
+							        <a href="#">7</a>
+							        <a href="#">8</a>
+							        <span class="dian">...</span>
+							        <a href="#">9</a>
+							    </span>
+							    <a href="#" class="go go-n">下一页</a>
+							</div>
+						</div>
 					</div>
-					<div class="g-mnc" style="position:static;">
-						<div class="m-sum">
-							<p><em>共需消费：</em><span>10读书币</span>(0.01元)</p>
-							<p>帐号余额：5600读书币</p>	
-							<p class="bt"><a class="gopay" href="#">购&nbsp;&nbsp;买</a></p>
-						</div>
-					<!--
-						<div class="m-sum">
-							<p><em>共需消费：</em><span>10读书币</span>(0.01元)</p>
-							<p>帐号余额：0读书币<span class="warning">余额不足</span>去<span class="getcoin"><a href="#">充值</a></span></p>	
-							<p class="bt"><a class="gopay gopay-1" href="javascript:;">购&nbsp;&nbsp;买</a></p>
-						</div>
-					-->
+					<div class="m-tags">
+						<ul>
+							<li class="grzx ul"><a href="#">个人中心</a></li>
+							<li class="yecx"><a href="#">余额查询</a></li>
+							<li class="xfjl crt"><a href="#">消费记录</a></li>
+							<li class="zddy ul"><a href="#">自动订阅</a></li>
+							<li class="wdsd"><a href="#">我的书单</a></li>
+						</ul>
 					</div>
                 </div>
             </div>
@@ -145,11 +189,10 @@
         </div>
     </div>
 
-</div>
 <div id="J_ChapSelect" class="m-chapters" style="display:none;">
 	<div class="m-emptycon" style="display:none;">章节选择没有内容</div>
 	<div class="m-headtop">
-		<h3>请选择您要购买的章节<a href="javascript:void(0);" class="j-cancel w-close"></a></h3>
+		<h3>您已经选择的章节<a href="javascript:void(0);" class="j-cancel w-close"></a></h3>
 	</div>
 	<div class="m-fullcon">
 		<table id="J_Chapter">
@@ -185,16 +228,17 @@
 		</table>
 		<div class="m-chapdone">
 			<p><em>共需消费：</em><span id="J_SelectSum" class="j-chaptatol"></span>(<span id="J_RMB" class="j-rmb"></span>元)</p>
-			<p><a class="j-alldone ok btn" href="javascript:void(0);">确定</a></p>
+			<p class="bt"><a class="j-alldone ok btn" href="javascript:void(0);">确定</a></p>
 		</div>
 	</div>
 </div>
+</div>
 <script src="js/widgets.js"></script>
 <script src="js/header.js"></script>
+<script src="js/sharesns.js"></script>
 <script src="js/chapter-s.js"></script>
 <script>
 (function(){
-	
 	var chapterQuery = function(){
 		$('.j-chap').click(function(){
 			var data = $(this).attr('data');
@@ -220,6 +264,7 @@
 	};
 	
 	chapterQuery();
+	snsForward.init('.j-share');
 })();
 </script>
 </body>

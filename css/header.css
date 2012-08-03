@@ -37,6 +37,7 @@ body{background-color:#fff;}
 .w-star span,.w-img,.m-dy .op .o1,.m-dy .op .o2,.m-sdbox h3,.m-stars .sc,.m-dy .op .o3,.m-info a.edit{background:url(../images/sprite2.png?0200) no-repeat 9999px 9999px;}
 .w-bimg span.free,.w-bimg span.lian,.w-bimg span.xuan{background:url(../images/bookwdg.png?0200) no-repeat 9999px 9999px;}
 .m-ulink ul.openbox li a,.m-ulink a.cart{background:url(../images/menuicons.png?0200) no-repeat 9999px 9999px;}
+.w-close{background: url(../images/closex.png?0201) no-repeat 0 0;}
 /* 清除浮动 */
 .g-bdc:after,.m-nav ul:after,.m-menua:after,.g-ft:after,.m-ulink .text:after,.m-bookele:after{clear:both;content:'.';display:block;height:0;visibility:hidden;}
 .g-bdc,.m-nav ul,.m-menua,.g-ft,.m-ulink .text,.m-bookele{zoom:1;}
@@ -210,9 +211,10 @@ body{background-color:#fff;}
 /* 翻页 */
 .m-page{height:27px;margin:25px 0;text-align:center;_margin-bottom:0px;}
 .m-page .nums,.m-page a,.m-page .dian{display:inline-block;*display:inline;*zoom:1;}
-.m-page .go{width:39px;height:19px;line-height:19px;color:#666;padding:3px 10px;border:#d9d9d9 solid 1px;background-color:#f8f8f8;}
+.m-page .dian{color: #999;}
+.m-page .go{width:39px;height:19px;line-height:19px;color:#999;padding:3px 10px;border:#d9d9d9 solid 1px;background-color:#f8f8f8;}
 .m-page .nums{margin:0 10px;}
-.m-page .nums a{margin:0 3px;padding:3px 2px;border:1px solid #fff;}
+.m-page .nums a{margin:0 3px;padding:3px 2px;border:1px solid #fff;color: #999;}
 .m-page .nums .j-crt{color:#cd4544;}
 
 /* 组件(widget)(.w-) */
@@ -272,7 +274,8 @@ body{background-color:#fff;}
 /* 源缩略图 */
 .w-img,.w-img img{width:75px;height:75px;float:left;}
 .w-img{margin:0 10px 0 0;padding:2px;background-position:-241px -340px;}
-
+/* 关闭按钮 */
+.w-close{width: 24px;height: 24px;float: right;_position:absolute;_top:10;_right:20px;}
 /* 功能(function)(.f-) */
 .f-dn{display:none;}
 .f-db1{border:#dedede solid 1px;background-color:#f4f4f4;box-shadow:1px 1px 2px #969696;}

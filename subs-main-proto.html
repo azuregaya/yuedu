@@ -408,10 +408,12 @@ $(document).ready(function(){
 			crossDomain: false,
 			dataType: 'json',
 			success : function(data){
-				$.each(data,function(idx){
-					listHTML += '<li class="items"><input id="J_MailUsed'+ idx +'" type="checkbox" value="'+ data[idx].contactAddr + '" /><label for="J_MailUsed'+ idx +'">'+ data[idx].contactAddr +'</label></li>';
-				});
-				listCon.empty().append(listHTML);
+				if(data.length > 0){
+					$.each(data,function(idx){
+						listHTML += '<li class="items"><input id="J_MailUsed'+ idx +'" type="checkbox" value="'+ data[idx].contactAddr + '" /><label for="J_MailUsed'+ idx +'">'+ data[idx].contactAddr +'</label></li>';
+					});
+					listCon.empty().append(listHTML);
+				}
 				mailShare();
 			}
 		});
@@ -419,7 +421,7 @@ $(document).ready(function(){
 	
 	var sendMail = function(){
 		$('#J_MailSend').click(function(){
-			var receivers = $('#J_MailList').val(), content = $('#J_MailContent').val();
+			var receivers = $('#J_MailList').val(), title = $('#J_MailTitle').val(), content = $('#J_MailText').val();
 			
 			if(receivers.length > 0 && title.length > 0 && content.length > 0){
 				$.ajax({
@@ -436,6 +438,7 @@ $(document).ready(function(){
 				});
 			}else{
 				//$('#pserror').fadeIn(300).delay(3000).fadeOut(300);
+				YD.popTip('收件人、标题、或评论不能为空！')
 			}
 		});
 	};
@@ -509,6 +512,9 @@ $(document).ready(function(){
 			listHTML += '<li class="items"><input id="J_MailChecked'+ i +'" type="checkbox" value="'+ _data[i] + '" /><label for="J_MailChecked'+ i +'">'+ _data[i] +'</label></li>';
 		};
 		con.empty().append(listHTML);
+		$('#J_CheckCon li.items input').each(function(){
+			$(this)[0].checked = false;
+		});
 	};
 	
 	var mailInit = function(){
@@ -1167,6 +1173,7 @@ $(document).ready(function(){
 		loadBrief('data/json1.js');
 		subsComt();
 		mailInit();
+		sendMail();
 		/* 计算左右滚动区域高度 */
 		YD.heightCal('#J_RSec');
 		YD.heightCal('#J_LSec');

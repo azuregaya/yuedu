@@ -627,7 +627,7 @@
 		<input type="hidden" name="source_uuid" value="${dbBookSource.sourceUuid}" />
 		<input type="hidden" name="pay_type" value="${dbBookSource.payType}" />
 		<div class="m-chapdone">
-			<span class="fl">请选择您要购买的章节</span>
+			<span class="fl">请选择您要购买的章节</span><a href="javascript:void(0);" class="j-cansel w-close"></a>
 		</div>
 		<table id="J_Chapter">
 			<colgroup valign="middle">
@@ -782,9 +782,11 @@
 							$('#J_ReturnNum').text(data.number);
 							$('#J_ReturnPrice').text(data.amount);
 							YD.openLayer('#J_ADDCart');
+							$('#J_BuyLater').hide();
 						}else{//已经付费过了，提示付费成功
 							//FIXME 
 						}
+
 					}else{
 						//失败情况
 					}
