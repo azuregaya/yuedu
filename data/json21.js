@@ -1,11 +1,12 @@
 {
-	"resultCode" 	:	1,
+	"resultCode" 	:	0,
 	"paid"			:   false,
 	"type"			:	"all",
 	"title"			:   "幽冥秘籍之阴阳界",
-	"chap"			:   "12章",
-	"word"			:   17000,
-	"price"			:	0.5
+	"price"			:	4000,
+	"remain"		:	3000,
+	"discounted"	:   3000,
+	"substate" 		: 	"checked"
 }
 
 

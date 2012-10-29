@@ -148,7 +148,8 @@
 							 <!-- 企业银行 -->
 							</ul>
 							<div class="m-pbtn">
-								<a href="javascript:void(0);">确&nbsp;认</a>
+								<a class="prev" href="#">上一步</a>
+								<a class="ok" href="javascript:void(0);">确&nbsp;认</a>
 							</div>
 						</div>
 					</div>
@@ -173,7 +174,7 @@
 	<div class="inner">
 		<h2>完成付款<a class="j-close cbtn"></a></h2>
 		<div class="backinfo">
-			<p>你已成功生成本笔订单，您可以在“我的购书记录”中进行查看订单状态付款完成前请不要关闭此窗口，完成付款后请根据您的情况点击下面的按钮：</p>
+			<p>付款完成前请不要关闭此窗口，完成付款后请根据您的情况点击下面的按钮：</p>
 			<h5>请在新开网上信用卡页面完成付款后再选择</h5>
 			<p>
 				<a class="btn" href="#">已完成付款</a>
@@ -230,7 +231,7 @@
 	};
 	
 	var okAction = function(){
-		$('.m-pbtn a').click(function(){
+		$('.m-pbtn a.ok').click(function(){
 			$('#J_Form').submit();
 			openPayback();
 		});

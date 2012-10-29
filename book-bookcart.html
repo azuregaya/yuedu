@@ -74,7 +74,7 @@
 									</th>
 									<th class="s-title">书籍名称</th>
 									<th class="s-point">本次购买</th>
-									<th class="s-price">实付款（读书币）</th>
+									<th class="s-price">实付款（丁丁币）</th>
 									<th class="s-del"><a id="J_DelAll" href="javascript:void(0);">操作</a></th>
 								</tr>
 							</thead>
@@ -103,6 +103,7 @@
 										<a class="j-changechap" href="javascript:void(0);" bid="8273873273">选择章节</a>
 									</td>
 									<td class="s-price">
+										<del>400</del>
 										<em tabindex="0">118.00</em>
 									</td>
 									<td class="s-del">
@@ -132,6 +133,7 @@
 										整本购买
 									</td>
 									<td class="s-price">
+										<del>400</del>
 										<em tabindex="0">118.00</em>
 									</td>
 									<td class="s-del">
@@ -206,14 +208,15 @@
 						</div>
 						<div class="g-mnc" style="position:static;">
 							<div class="m-sum">
-								<p>选中共<span id="J_TotalNum" class="s1"></span>本  书籍总价：<span id="J_TotalPrice" class="s2"></span>读书币 </p>
-								<p class="bt"><a id="J_GoPay" class="gopay" href="#">结&nbsp;&nbsp;算</a></p>
+								<p>选中共<span id="J_TotalNum" class="s1"></span>本  书籍总价：<span id="J_TotalPrice" class="s2"></span>丁丁币 (<span id="J_TotalPriceRMB" class="grey"></span>元)</p>
+								<p class="reops">帐号余额：<span id="J_CartRemain">399</span>丁丁币<span id="J_ReCheck"><span class="warning">余额不足&nbsp;</span><span class="getcoin"><a id="J_ChargeLink_Cart" href="" target="_blank">去充值</a></span></span></p>
+								<p class="bt"><a id="J_GoPay" class="gopay" href="javascript:;">结&nbsp;&nbsp;算</a></p>
 							</div>
 						</div>
 					</div>
 					<div class="m-tags">
 						<ul>
-							<li class="grzx ul"><a href="#">个人中心</a></li>
+							<li class="grzx ul"><a href="#">个人信息</a></li>
 							<li class="yecx ul"><a href="#">余额查询</a></li>
 							<li class="xfjl ul"><a href="#">消费记录</a></li>
 							<li class="zddy"><a href="#">自动订阅</a></li>
@@ -258,9 +261,9 @@
 			<thead>
 				<tr>
 					<th><span class="j-capall">全选</span>|<span class="j-capopp">反选</span></th>
-					<th>章节</th>
+					<th>&nbsp;&nbsp;</th>
 					<th>字数</th>
-					<th>实付款（读书币）</th>
+					<th>实付款（丁丁币）</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -281,15 +284,15 @@
 				</tr>
 			</tbody>
 		</table>
-		<div id="J_CanGo" class="m-chapdone">
+		<div id="J_CanGo" class="m-chapdone" style="display:none;">
 			<p><em>共需消费：</em><span class="j-chaptatol"></span>(<span class="j-rmb"></span>元)</p>
-			<p>帐号余额：<span class="j-remain"></span>读书币</p>
+			<p class="reops" style="display:none;">帐号余额：<span class="j-remain"></span>丁丁币</p>
 			<p class="bt"><a class="j-alldone ok btn" href="javascript:void(0);">确定</a><a class="j-cancel btn" href="javascript:void(0);">取消</a></p>
 		</div>
 		<div id="J_CantGo" class="m-chapdone" style="display:none;">
 			<p><em>共需消费：</em><span class="j-chaptatol"></span>(<span class="j-rmb"></span>元)</p>
-			<p>帐号余额：<span class="j-remain"></span>读书币<span class="warning">余额不足&nbsp;&nbsp;</span>去<span class="getcoin"><a class="j-cancel" href="#">充值</a></span></p>
-			<p class="bt"><a class="ok-1 btn" href="javascript:void(0);">确定</a><a class="j-cancel btn" href="javascript:void(0);">取消</a></p>
+			<p class="reops" style="display:none;">帐号余额：<span class="j-remain"></span>丁丁币<span class="warning">余额不足&nbsp;&nbsp;</span><span class="getcoin"><a id="J_ChargeLink" href="" target="_blank">去充值</a></span></p>
+			<p class="bt"><a class="j-alldone ok btn" href="javascript:void(0);">确定</a><a class="j-cancel btn" href="javascript:void(0);">取消</a></p>
 		</div>
 		<div class="m-autosub">
 			<p><input id="J_AutoSub" type="checkbox"><label for="J_AutoSub">自动订阅</label><span>（阅读后续VIP章节时将自动购买，可退订）</span></p>
@@ -297,6 +300,17 @@
 		</form>
 	</div>
 </div>
+<div id="J_After" class="m-popup m-popup-wb m-popup-cz f-db2" style="display:none;">
+	<h3>购买<a href="javascript:void(0)" class="j-close"></a></h3>
+	<div class="inner">
+		<p>在新打开的页面上充值后继续购买</p>
+		<div class="bt">
+			<a class="ok j-close">充值成功</a>
+			<a class="" href="/help/recharge" target="_blank">充值帮助</a>
+		</div>
+	</div>
+</div>
+
 </div>
 <script src="js/widgets.js"></script>
 <script src="js/header.js"></script>
@@ -322,7 +336,7 @@
 			var bid = $(this).attr('bid');
 			$.ajax({
 				type: 'GET',
-				url: 'data/json23.js',
+				url: 'data/json30.js',
 				dataType: 'json',
 				data: bid,
 				success : function(data){
@@ -358,7 +372,11 @@
 			if($('#J_Cart .ccb:checked').length == 0){
 				alert('请选择书籍提交订单！');
 			}else{
-				$('#J_CartForm').submit();
+				if($(this).hasClass('fbd')){
+					return;
+				}else{
+					$('#J_CartForm').submit();
+				}
 			}
 		});
 	};

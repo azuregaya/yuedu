@@ -1,0 +1,21 @@
+/* 帮助页面 */
+.m-tags ul li a,.m-help h4{background: url(../images/helpicon.png?$IMG_V) 9999px 9999px no-repeat;}
+
+.g-mnc{border-top: #ebebeb solid 1px;}
+h2{font-size: 18px;font-weight: normal;margin: 30px 0 16px 0;}
+
+.m-tags{width: 118px;float: left;z-index: 1000;}
+.m-tags ul li{height:45px; border-bottom: #e7e7e7 solid 1px;background-color: #f4f4f4;}
+.m-tags ul li.crt{background-color:#fff;border-left: #f4f4f4 solid 1px;border-right: #f4f4f4 solid 1px;}
+.m-tags ul li a{display: block;height: 45px;line-height: 45px;padding-left: 40px;font-size: 14px;color: #333;}
+.m-tags ul li.sjgb a{background-position: 16px 12px;}
+.m-tags ul li.czbz a{background-position: 16px -23px;}
+.m-tags ul li.zhxx a{background-position: 16px -62px;}
+.m-tags ul li.sjgl a{background-position: 16px -103px;}
+.m-tags ul li.qqjb a{background-position: 16px -143px;}
+
+.m-help{width:780px;padding:24px 20px 20px 20px; float:right;}
+
+.m-help h4{font-size: 14px;color: #333;font-weight: normal;line-height: 24px;padding-left: 20px;background-position: 0 -218px;}
+.m-help p,.m-help ol li{font-size: 12px;color: #666;line-height: 24px;}
+.m-help ol li{list-style: decimal inside;}

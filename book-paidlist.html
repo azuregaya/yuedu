@@ -19,24 +19,39 @@
 		<div class="g-hd">
 			<h1 class="m-logo"><a href="#">网易阅读</a></h1>
 			<div class="m-nav">
-				<ul>
-					<li class="nw j-crt"><a href="#" hidefocus="hidefocus" onclick="_gaq.push(['_trackEvent', 'yuedu', 'click', 'home']);">首页</a></li>
+				<ul id="J_Nav">
+					<li class="nw st"><a href="#" hidefocus="hidefocus" onclick="_gaq.push(['_trackEvent', 'yuedu', 'click', 'home']);">首页</a></li>
 					<li class="ww"><a href="#" hidefocus="hidefocus" onclick="_gaq.push(['_trackEvent', 'yuedu', 'click', 'content']);">内容中心</a></li>
-					<li class="ww"><a href="#" hidefocus="hidefocus" onclick="_gaq.push(['_trackEvent', 'yuedu', 'click', 'content']);">我的订阅<b></b></a></li>
+					<li class="ww wws wwl j-crt"><a href="#" hidefocus="hidefocus" onclick="_gaq.push(['_trackEvent', 'yuedu', 'click', 'content']);">我的订阅</a></li>
+					<li class="sn"><a href="javascript:void(0);">|</a></li>
+					<li class="ww wws wwr"><a href="#" hidefocus="hidefocus" onclick="_gaq.push(['_trackEvent', 'yuedu', 'click', 'content']);">我的书架</a></li>
+					<!--
+					<li class="www j-crt">
+						<a href="#" style="width:48%;text-align:right;" hidefocus="hidefocus" onclick="_gaq.push(['_trackEvent', 'yuedu', 'click', 'content']);">&nbsp;我的订阅&nbsp;</a>
+						<a class="dot" style="width:5%;" href="javascript:void(0);">|</a>
+						<a style="width:47%;text-align:left;" href="#" hidefocus="hidefocus" onclick="_gaq.push(['_trackEvent', 'yuedu', 'click', 'content']);">&nbsp;我的书架</a>
+					</li>
+					-->
 					<li class="ww"><a href="#" hidefocus="hidefocus" onclick="_gaq.push(['_trackEvent', 'yuedu', 'click', 'client']);">客户端下载</a></li>
 				</ul>
 			</div>
 			
-			<div class="m-ulink f-dn">
-				<div class="text"><a href="#">登录</a><span class="sep">|</span><a href="#">注册</a></div>
+			<div class="m-ulink" style="display:none;">
+				<a href="#" hidefocus="hidefocus">登录</a><span class="sep">|</span><a href="#" hidefocus="hidefocus">注册</a>
 			</div>
-			<div id="J_tb" class="m-ulink" state="1">
-				<div class="text"><a class="arrow" href="#">选项</a><span class="sep sep1">|</span><a class="name" href="#">悟空抱抱我</a></div>
+			<div id="J_tb" class="m-ulink" state="2">
+				<div class="text">
+					<a class="cart" href="#">充值</a>
+					<span class="sep sep1">|</span>
+					<a class="name" href="#">悟空抱抱我</a>
+				</div>
 				<div class="submenu">
 					<ul class="openbox f-db1 f-dn">
-						<li>Hi,悟空抱抱我</li>
-						<li>从现在开始，随时随地阅读!</li>
-						<li class="ll"><a class="active" href="#">开通网易阅读</a></li>
+						<li class="grzx"><a href="#"><span class="g1"><img src="images/profile.png" width="32" height="32" /></span><span class="g2">个人信息</span></a></li>
+						<li class="yecx"><a href="#">余额查询</a></li>
+						<li class="xfjl"><a href="#">消费记录</a></li>
+						<li class="wdsd"><a href="#">我的书单</a></li>
+						<li class="tcdl"><a href="#">登出</a></li>
 					</ul>
 					<ul class="options f-db1 f-dn">
 						<li><a href="#">反馈意见</a></li>
@@ -45,8 +60,17 @@
 				</div>
 			</div>
 			
-			<div class="m-sch"><form action="#"><input type="text" id="topsearch" /><button type="submit">&nbsp;</button></form></div>
+			<div class="m-sch">
+				<form action="#"><input type="text" id="topsearch" /><input id="J_SearchType" type="hidden" name="" value="" /><button type="submit">&nbsp;</button></form>
+				<ul id="J_SearchOps" style="display:none;">
+					<li class="topli"><a href="#" type="0">搜"<em></em>"相关内容源</a></li>
+					<li><a href="#" type="4">搜"<em></em>"相关书籍</a></li>
+				</ul>
+			</div>
 			
+			<div class="m-tips" style="display:none;">
+				<div id="J_TIPS" class="inner"></div>
+			</div>
 		</div>
 	</div>
 	
@@ -56,9 +80,20 @@
             <div class="g-mn g-mn-1 g-mn-2">
                 <div class="g-mnc">
 					<div class="m-bookcart m-bookcart-1">
-						<!-- 消费记录为空
-						<div class="hint"><p>您尚无消费记录，去<a href="#">内容中心</a>看看</p></div>
+					<!-- //无记录的情况
+						<div class="hint hint-4"><p>您尚无消费记录，去<a href="#">内容中心</a>看看</p></div>
+						<div class="hint hint-3">
+							<p>查看消费记录
+							<select id="J_Select">
+								<option data-msg="最近一个月" value="1M">最近一个月</option>
+								<option data-msg="最近三个月" value="3M">最近三个月</option>
+								<option data-msg="最近半年" value="6M">最近半年</option>
+								<option data-msg="最近一年" value="12M">最近一年</option>
+							</select>
+							</p>
+						</div>
 					-->
+
 						<div class="hint hint-3">
 							<p>查看消费记录
 							<select id="J_Select">
@@ -73,7 +108,7 @@
 						<table>
 							<colgroup valign="middle">
 								<col width="118">
-								<col >
+								<col width="127">
 								<col width="200">
 								<col width="118">
 								<col width="118">
@@ -161,10 +196,11 @@
 							    <a href="#" class="go go-n">下一页</a>
 							</div>
 						</div>
+					
 					</div>
 					<div class="m-tags">
 						<ul>
-							<li class="grzx ul"><a href="#">个人中心</a></li>
+							<li class="grzx ul"><a href="#">个人信息</a></li>
 							<li class="yecx"><a href="#">余额查询</a></li>
 							<li class="xfjl crt"><a href="#">消费记录</a></li>
 							<li class="zddy ul"><a href="#">自动订阅</a></li>
@@ -245,7 +281,7 @@
 			if(data){
 				$.ajax({
 					type: 'GET',
-					url: 'data/json23.js',
+					url: 'data/json29.js',
 					dataType: 'json',
 					success : function(data){
 						if(data){
@@ -262,9 +298,15 @@
 		});
 		
 	};
+
+	var pop = function(num){
+		YD.popTip('购买成功，消费'+ num +'丁丁币');
+	};
 	
 	chapterQuery();
 	snsForward.init('.j-share');
+
+	//pop(15);显示购买成功提示
 })();
 </script>
 </body>

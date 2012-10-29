@@ -33,7 +33,7 @@ var chapterSet = (function(){
 			setLength : function(){
 				setTimeout(function(){
 					if(chapTable.height() > 500){
-						$('#J_ChapCorl').css({'height':500,'overflow-y':'scroll','overflow-x':'hidden','position':'relative'}).scrollTop(0);
+						$('#J_ChapCorl').css({'height':400,'overflow-y':'scroll','overflow-x':'hidden','position':'relative'}).scrollTop(0);
 					}
 				},30);
 			},
@@ -48,27 +48,43 @@ var chapterSet = (function(){
 					amount += $(this).text()*1;
 					
 				});
-				amount = (Math.round(amount*100))/100;
-				$('#J_SelectSum').text(amount+'读书币');
-				$('#J_RMB').text(amount/100);
+				//amount = (Math.round(amount*100))/100;
+				$('#J_SelectSum').text(amount+'丁丁币');
+				$('#J_RMB').text((amount/100).toFixed(2));
 			}
 		}
 	})();
 	
 	var processData = function(data){//生成表格
 	
-			if(data[0].resultCode == 0){//返回状态正常
-				if(data[0].resultCode == -694) {
-					YD.popTipLayer('该书还没有需要付费的章节，您暂时不需要购买。');
-					return;
-				}
-				if(data[0].none){//没有章节情况显示
-					YD.popTipLayer('当前无可选章节 ，您选择的章节已存在于某未付款订单中。您可以点击查看<a href="/order.do?operation=list">购买记录</a>');
-					return; 
-				}
-				openLayer.openLayer('#J_ChapSelect');
-				chapTable.empty();
-				var _data = data[1];
+		if(data.resultCode == -694){
+			YD.popTipLayer('该书还没有需要付费的章节，您暂时不需要购买。');
+			return;
+		}else if(data.resultCode == -1){//返回状态错误
+			YD.popTip('服务器错误！');
+			return;
+		}else if(data.resultCode == -999){//未登录
+			login163();
+		}else if(data.resultCode == 0){//返回状态正常
+			if(data.none){//没有章节情况显示
+				YD.popTipLayer('当前无可选章节 ，您选择的章节已存在于某未付款订单中。您可以点击查看<a href="/order.do?operation=list">购买记录</a>');
+				return; 
+			}
+
+			openLayer.openLayer('#J_ChapSelect');
+			chapTable.empty();
+			if (data.chapters) {
+				var _data = data.chapters;
+				var listHTML = '';
+				$.each(_data,function(idx){
+					listHTML += '<tr><td class="cpt cpt-1"><span>' + _data[idx].chapterTitle + '</span></td>';
+					listHTML += '<td>' + _data[idx].words + '</td>';
+					listHTML += '<td class="amount amount-t">' + _data[idx].chapPrice +'</td></tr>';
+				});
+				chapTable.append(listHTML);
+			};
+			if (data.sections) {
+				var _data = data.sections;
 				$.each(_data,function(idx){
 					var listHTML = '<tr><td class="section-title section-title-2" colspan="4"';
 					listHTML += 'sectionId="'+ _data[idx].sectionId +'">';
@@ -81,15 +97,12 @@ var chapterSet = (function(){
 					});
 					chapTable.append(listHTML);
 				});
-				
-				chapterOps.setLength();
-				chapterOps.calSum();
-				
-			}else if(data[0].resultCode == -1){//返回状态错误
-				YD.popTip('服务器错误！');
-			}else if(data[0].resultCode == -999){
-				login163();
-			}
+			};
+			
+			chapterOps.setLength();
+			chapterOps.calSum();
+			
+		}
 	};
 	
 	return {

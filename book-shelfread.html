@@ -98,7 +98,7 @@
 										<span>&bull;</span>
 									</div>
 									<div class="ops">
-										<a class="btn" href="#">购买全文</a>
+										<a class="btn j-buyit" href="#">购买全文</a>
 										<a href="#">详情&gt;&gt;</a>
 									</div>
 									<div class="control" style="display:none;">
@@ -135,7 +135,7 @@
 										<span>&bull;</span>
 									</div>
 									<div class="ops">
-										<a class="btn" href="#">购买全文</a>
+										<a class="btn j-buyit" href="#">购买全文</a>
 										<a href="#">详情&gt;&gt;</a>
 									</div>
 									<div class="control" style="display:none;">
@@ -587,8 +587,106 @@
         </div>
     </div>
 </div>
+<div id="J_ChapSelect" class="m-chapters" style="display:none;">
+	<div class="m-emptycon" style="display:none;">章节选择没有内容</div>
+	<div class="m-headtop">
+		<h3>请选择您要购买的章节<a href="javascript:void(0);" class="j-cancel w-close"></a></h3>
+	</div>
+	<div class="m-fullcon">
+		<form id="J_M_ConfirmOrder" action="/order.do" method="post">
+		<input type="hidden" name="operation" value="confirm_single" />
+		<input type="hidden" name="source_uuid" value="${dbBookSource.sourceUuid}" />
+		<input type="hidden" name="pay_type" value="${dbBookSource.payType}" />
+		<table id="J_Chapter">
+			<colgroup valign="middle">
+				<col width="68">
+				<col>
+				<col width="130">
+				<col width="160">
+			</colgroup>
+			<thead>
+				<tr>
+					<th><span class="j-capall">全选</span>|<span class="j-capopp">反选</span></th>
+					<th>&nbsp;&nbsp;</th>
+					<th>字数</th>
+					<th>实付款（丁丁币）</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td colspan="4" style="border-top: #c6c6c6 solid 1px;">
+						<div id="J_ChapCorl">
+							<table>
+								<colgroup valign="middle">
+									<col width="48">
+									<col>
+									<col width="100">
+									<col width="150">
+								</colgroup>
+								<tbody id="J_ChapTable" class="m-innertable"></tbody>
+							</table>
+						</div>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<div id="J_CanGo" class="m-chapdone" style="display:none;">
+			<p><em>共需消费：</em><span class="j-chaptatol"></span>(<span class="j-rmb"></span>元)</p>
+			<p class="reops">帐号余额：<span class="j-remain"></span>丁丁币</p>
+			<p class="bt"><a class="j-alldone ok btn" href="javascript:void(0);">确定</a><a class="j-cancel btn" href="javascript:void(0);">取消</a></p>
+		</div>
+		<div id="J_CantGo" class="m-chapdone" style="display:none;">
+			<p><em>共需消费：</em><span class="j-chaptatol"></span>(<span class="j-rmb"></span>元)</p>
+			<p class="reops">帐号余额：<span class="j-remain"></span>丁丁币<span class="warning">余额不足&nbsp;&nbsp;</span><span class="getcoin"><a id="J_ChargeLink" href="" target="_blank">去充值</a></span></p>
+			<p class="bt"><a class="ok-1 btn" href="javascript:void(0);">确定</a><a class="j-cancel btn" href="javascript:void(0);">取消</a></p>
+		</div>
+		<div class="m-autosub">
+			<p><input id="J_AutoSub" type="checkbox"><label for="J_AutoSub">自动订阅</label><span>（阅读后续VIP章节时将自动购买，可退订）</span></p>
+		</div>
+		</form>
+	</div>
+</div>
+<div id="J_VIPBuy" class="m-newlayer m-newlayer-s2" style="display:none;">
+	<h2><span>购买</span><a href="javascript:void(0)" class="j-close"></a></h2>
+	<div id="J_VIPGo" class="inner inner-1" style="display:none;">
+		<div class="content">
+			<h3></h3>
+			<p class="j-price">网易价：<em></em><span></span></p>
+			<p class="j-left">帐号余额：<span class="j-num"></span></p>
+		</div>
+		<div class="button">
+			<a class="ok">购&nbsp;&nbsp;买</a>
+			<a class="cc j-close">取&nbsp;&nbsp;消</a>
+		</div>
+	</div>
+	<div id="J_VIPStop" class="inner inner-1" style="display:none;">
+		<div class="content">
+			<h3></h3>
+			<p class="j-price">网易价：<em></em><span></span></p>
+			<p class="j-left">帐号余额：<span class="j-num"></span><span class="warning">余额不足&nbsp;&nbsp;</span><span class="getcoin"><a id="J_ChargeLink-1" class="j-cancel" target="_blank" href="">去充值</a></span></p>
+		</div>
+		<div class="button">
+			<a class="ok ok-1">购&nbsp;&nbsp;买</a>
+			<a class="cc j-close">取&nbsp;&nbsp;消</a>
+		</div>
+	</div>
+	<div id="J_VIPTick" class="m-autosub" style="display:none;">
+		<p><input id="J_AutoSub-1" type="checkbox"><label for="J_AutoSub">自动订阅</label><span>（阅读后续VIP章节时将自动购买，可退订）</span></p>
+	</div>
+</div>
+<div id="J_After" class="m-popup m-popup-wb m-popup-cz f-db2" style="display:none;">
+	<h3>购买<a href="javascript:void(0)" class="j-close"></a></h3>
+	<div class="inner">
+		<p>在新打开的页面上充值后继续购买</p>
+		<div class="bt">
+			<a class="ok j-close">充值成功</a>
+			<a class="" href="/help/recharge" target="_blank">充值帮助</a>
+		</div>
+	</div>
+</div>
 <script src="js/widgets.js"></script>
 <script src="js/header.js"></script>
+<script src="js/chapter-c.js"></script>
 <script>
 (function(){
 
@@ -661,6 +759,134 @@
 		});
 	})();
 	
+	var processData = function(type,title,price,discounted,remain,substate,btntype){
+		$('#J_VIPBuy .content h3').text('“'+title+'”'+'需购买才能阅读');
+		if(discounted < price){
+			$('.discount').remove();
+			$('.j-price').before('<p class="discount">优惠价：<em>' + discounted + '</em>丁丁币<span>（' + discounted/100 +'元）</span></p>');
+			$('.j-price em').html('<del>'+ price + '</del>'+'丁丁币');
+			$('.j-price').addClass('discprice');
+		}else{
+			$('.j-price em').text(price+'丁丁币');
+		}
+		$('.j-price span').text('('+ (price/100).toFixed(2) +'元)');
+		$('.j-num').text(remain+'丁丁币');
+
+		function openGo(){
+			btnType = btntype;
+			$('#J_VIPGo').show();
+			$('#J_VIPStop').hide();
+			$('#J_AutoSub-1')[0].disabled = '';
+			YD.openLayer('#J_VIPBuy');
+		}
+
+		function openStop(num){
+			$('#J_VIPStop').show();
+			$('#J_VIPGo').hide();
+			$('#J_AutoSub-1')[0].disabled = 'disabled';
+			$('#J_ChargeLink-1').attr('href','/recharge.do?operation=form&v_required='+num);
+			$('#J_ChargeLink-1').unbind().click(function(){
+				$('#J_VIPBuy').hide();
+				$('.m-mask').hide();
+				YD.openLayer('#J_After');
+			});
+			YD.openLayer('#J_VIPBuy');
+		}
+
+		if(discounted < price){
+			if (remain*1 >= discounted*1) {//优惠后余额够
+				openGo();
+			}else{//余额不足
+				openStop(discounted);
+			};
+		}else{
+			if(remain*1 >= price*1){//余额足够
+				openGo();
+			}else{//余额不足
+				openStop(price);
+			}
+		}
+		
+		if(type == 'all'){//全本购买
+			$('#J_VIPTick').hide();
+		}else if(type == 'chap'){//按章节购买
+			$('#J_VIPTick').show();
+			if(substate == 'checked'){
+				$('#J_AutoSub-1')[0].checked = true;
+			}else{
+				$('#J_AutoSub-1')[0].checked = false;
+			}
+		}
+	};
+
+	var buyActions = function(){
+		$('.j-buyit').click(function(){
+			var bid = 001,id=$(this).attr('uuid'),crtbtn = $(this);
+			$.ajax({
+				type: 'GET',
+				url: 'data/json19.js',
+				dataType: 'json',
+				success : function(data){
+					if(data.resultCode === -999){
+						//未登录情况 login163();
+					}else if(data.resultCode === 0){
+						//成功情况
+						if(!data.paid){//如果还没有付费过
+							if(data.type == "all"){//全本购买情况
+								$.ajax({
+									type: 'GET',
+									url: 'data/json21.js',
+									dataType: 'json',
+									success : function(data){
+										if(data.resultCode === -999){
+											//login163();
+										}else if(data.resultCode === 0){
+											//成功情况
+											processData(data.type,data.title,data.price,data.discounted,data.remain,data.substate,1);//type,title,price,discounted,remain,substate,btntype
+										}else{
+											YD.popTip('发生未知错误，请稍候再试');
+										}
+									},
+									error : function(){
+										
+									}
+								});
+							}else if(data.type == "chap"){//按章节购买
+								$.ajax({
+									type: 'GET',
+									url: 'data/json30.js',
+									dataType: 'json',
+									success : function(data){
+
+					
+										if(data){
+											chapterSet.init(data,false);
+										}else{
+											YD.popTip('出错了，请稍候再试');
+										}
+									},
+									error : function(){
+										
+									}
+								});
+							}
+						}else{//已经付费过了，提示付费成功
+							//FIXME 
+						}
+					}else{
+						//失败情况
+					}
+				},
+				error : function(){
+					
+				}
+			});
+		});
+		
+	};
+
+	buyActions();
+
 })();
 </script>
 </body>

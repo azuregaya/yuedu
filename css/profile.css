@@ -1,5 +1,5 @@
-.m-mydvc li,.m-mydvc .tips .bubble{background:url(../images/devicetip.png?0200) 9999px 9999px no-repeat;}
-.m-mydvc ul li.dots{background:url(../images/cdots.png?0200) 9999px 9999px no-repeat;}
+.m-mydvc li,.m-mydvc .tips .bubble{background:url(../images/devicetip.png?$IMG_V) 9999px 9999px no-repeat;}
+.m-mydvc ul li.dots{background:url(../images/cdots.png?$IMG_V) 9999px 9999px no-repeat;}
 /* 清除浮动 */
 .m-newpro .m-info:after,.m-mydvc ul:after,.m-sec:after,.m-sec .tags ul:after,.m-sec .bt:after,.m-sec .inner .edit1:after,.m-sec .inner .edit2:after,.m-sec .inner .edit2 ul:after,.m-newpro:after,.m-wb .item:after{clear:both;content:'.';display:block;height:0;visibility:hidden;}
 .m-newpro .m-info,.m-mydvc ul,.m-sec,.m-sec .tags ul,.m-sec .bt,.m-sec .inner .edit1,.m-sec .inner .edit2,.m-sec .inner .edit2 ul,.m-newpro,.m-wb .item{zoom:1;}

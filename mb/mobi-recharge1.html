@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html;charset=utf-8"/>
+<title>页面标题</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<link type="text/css" rel="stylesheet" href="../css/mobi.css"/>
+<script type="text/javascript" src="http://yuedu.bst2.126.net/js/jquery-1.6.1.min.js?0003"></script>
+</head>
+<body id="page-163-com">
+<div class="g-doc">
+	<div class="g-inner">
+		<div class="m-logo-1">
+			<h1>网易云阅读</h1>
+		</div>
+		
+		<div class="m-recharge">
+			<form id="J_Form">
+			<p><label>充值帐号：</label><span>azuregaya@163.com</span></p>
+			<p><label>账户余额：</label><span><em id="J_Left">0</em>丁丁币</span></p>
+			<p class="amount"><label>输入金额：</label><input id="J_Num" type="number" />元</p>
+			<b>比率：1元=100丁丁币</b>
+
+			<p class="btn"><a id="J_OK" class="button">同意协议并充值</a></p>
+			<p class="agree">请阅读<a href="#">《网易云阅读平台服务协议》</a></p>
+			</form>
+		</div>
+	</div>
+	
+</div>
+<div id="J_AlertBox" class="m-alert" style="display:none;">
+	<div class="info">
+		<p id="J_Tip"></p>
+	</div>
+	<a class="comfirm j-close" href="javascript:;">知道了</a>
+</div>
+<script src="../js/widgets.js"></script>
+<script>
+(function(){
+	var ipt = document.getElementById('J_Num'),btn = document.getElementById('J_OK'),left = document.getElementById('J_Left'), isOK = false;
+	var tip = document.getElementById('J_Tip');
+
+	var amountCheck = (function(){
+		var reg = /^[+]?[\d]+(([\.]{1}[\d]+)|([\d]*))$/,
+			reg1 = /^\+?[1-9][0-9]*$/,
+			reg2 = /^\d+\.\d{2}$/,
+			reg3 = /^\d+\.\d{1}$/;
+
+		return {
+			ifNum : function(val){
+				if(( reg1.test(val) || reg2.test(val) || reg3.test(val)) && val != 0){
+					isOK = true;
+					return;
+				}else{
+					tip.innerText = '金额必须为正整数或小数，小数点后不超过2位';
+					YD.openLayer('#J_AlertBox');
+					ipt.value = '';
+					isOK = false;
+				}
+			}
+		}
+	})();
+
+	var moneyOps = (function(){
+		var balance,price,suggest;
+
+		return {
+			setVal : function(){
+				ipt.value = suggest;
+				left.innerText = balance;
+				amountCheck.ifNum(suggest);
+			},
+			setCharge : function(num){
+				var _num = num;
+				if(_num){
+					amountCheck.ifNum(_num);
+					ipt.value = _num;
+				}
+			},
+			init : function(b,p){
+				if(b < p){
+					balance = b;
+					price = p;
+					suggest = (price - balance).toFixed(2);
+					moneyOps.setVal();
+				}
+				
+			}
+		}
+	})();
+
+	var eventBind = function(){
+		ipt.addEventListener('blur',function(){
+			amountCheck.ifNum(this.value);
+		},false)
+
+		btn.addEventListener('click',function(){
+			amountCheck.ifNum(ipt.value);
+			if(isOK){
+				document.getElementById('J_Form').submit(); // 提交表单
+			}
+		},false);
+	};
+
+	eventBind();
+	//moneyOps.init(10,20.99);//两个参数为剩余金额、目标书籍金额
+	//moneyOps.setCharge(19);//设置充值金额
+})();
+</script>
+</body>
+</html>

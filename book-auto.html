@@ -57,13 +57,16 @@
                 <div class="g-mnc">
 					<div class="m-bookcart m-bookcart-1">
 						<!-- 自动订阅为空
-						<div class="hint"><p>您尚无消费记录，去<a href="#">内容中心-书籍</a>看看</p></div>
+						<div class="hint"><p>您尚无消费记录，去<a href="#">内容中心-书籍</a>看看</p>
+						<p class="hintpara">设置了“自动订阅”的作品，在阅读后续vip章节时自动购买</p>
+						</div>
 					-->
 						<div class="hint"><p>已定阅</p></div>
+						<p class="hintpara">设置了“自动订阅”的作品，在阅读后续vip章节时自动购买</p>
 						<form id="J_AutoSub">
 						<table>
 							<colgroup valign="middle">
-								<col>
+								<col width="299">
 								<col width="299">
 								<col width="200">
 							</colgroup>
@@ -120,7 +123,7 @@
 									</td>
 								</tr>
 								<tr class="bt">
-									<td class="items side" colspan="3"><input id="J_Select" class="cb" type="checkbox">全选/反选 <a id="J_Unsub" href="javascript:;">退订</a></td>
+									<td class="items side" colspan="3"><input id="J_Select" class="cb" type="checkbox"><label for="J_Select">全选</label><a id="J_Unsub" href="javascript:;">退订</a></td>
 								</tr>
 							</tbody>
 						</table>
@@ -149,7 +152,7 @@
 					</div>
 					<div class="m-tags">
 						<ul>
-							<li class="grzx ul"><a href="#">个人中心</a></li>
+							<li class="grzx ul"><a href="#">个人信息</a></li>
 							<li class="yecx ul"><a href="#">余额查询</a></li>
 							<li class="xfjl"><a href="#">消费记录</a></li>
 							<li class="zddy crt"><a href="#">自动订阅</a></li>
@@ -173,15 +176,16 @@
             </div>
         </div>
     </div>
-<div class="m-newlayer m-newlayer-s1">
-	<h2><span>这里是标题</span><a href="javascript:void(0)" class="j-close"></a></h2>
+<div id="J_UnsubLayer" class="m-newlayer m-newlayer-s1" style="display:none;">
+	<h2><span>退订</span><a href="javascript:void(0)" class="j-close"></a></h2>
 	<div class="inner">
 		<div class="content">
-			<p>sdfdfas</p>
+			<h3>退订所选自动订阅作品？</h3>
+			<p>退订后，遇到为购买VIP章节需要再次订阅</p>
 		</div>
 		<div class="button">
 			<a class="cc j-close">取&nbsp;&nbsp;消</a>
-			<a class="ok">确&nbsp;&nbsp;定</a>
+			<a id="J_SendUnsub" class="ok">确&nbsp;&nbsp;定</a>
 		</div>
 	</div>
 </div>
@@ -230,7 +234,16 @@
 		});
 
 		$('#J_Unsub').click(function(){
-			YD.createLayer({id:'J_NY1'});
+			if($('.j-cb:checked').length == 0){
+				YD.popTip('请选择已定阅书籍！');
+			}else{
+				YD.openLayer('#J_UnsubLayer');
+			}
+		});
+
+		$('#J_SendUnsub').click(function(){
+			$('#J_Form').submit();
+			//刷新页面
 		});
 	}
 	

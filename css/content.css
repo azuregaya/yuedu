@@ -1,8 +1,8 @@
 /* 统一调用背景图 */
-.m-cbox .cboxt h3,.m-cbox .cboxt .ctrl .prv,.m-cbox .cboxt .ctrl .nxt,.m-cbox .cboxt .ctrl .prv-h,.m-cbox .cboxt .ctrl .nxt-h,.m-subs .topst,.m-tops .topst, .m-slider ol li span{background:url(../images/sec-content.png?0200) no-repeat 9999px 9999px;}
-.m-tops .num{background:url(../images/sbox.png?0200) no-repeat 9999px 9999px;}
-.m-tips{background:url(../images/pop-range.png?0200) no-repeat 9999px 9999px;}
-.m-tips-1{background:url(../images/pop-range-ie6.png?0200) no-repeat 9999px 9999px;}
+.m-cbox .cboxt h3,.m-cbox .cboxt .ctrl .prv,.m-cbox .cboxt .ctrl .nxt,.m-cbox .cboxt .ctrl .prv-h,.m-cbox .cboxt .ctrl .nxt-h,.m-subs .topst,.m-tops .topst, .m-slider ol li span{background:url(../images/sec-content.png?$IMG_V) no-repeat 9999px 9999px;}
+.m-tops .num{background:url(../images/sbox.png?$IMG_V) no-repeat 9999px 9999px;}
+.m-tips{background:url(../images/pop-range.png?$IMG_V) no-repeat 9999px 9999px;}
+.m-tips-1{background:url(../images/pop-range-ie6.png?$IMG_V) no-repeat 9999px 9999px;}
 /* 清除浮动 */
 .m-sliderWrap:after{clear:both;content:'.';display:block;height:0;visibility:hidden;}
 .m-sliderWrap{zoom:1;}

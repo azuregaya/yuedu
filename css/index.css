@@ -1,5 +1,5 @@
 /* 统一背景导入 */
-.m-slider ol li,.m-lxwm h3,.m-hzhb h3,.m-lxwm ul li,.m-tit .t-hd .hd-wrap,.m-tit .t-hd .hd-wrap h4,.m-tit .t-hd a.follow,.m-tit .t-hd a.followed,.m-tit .t-bd a.up-btn,.m-tit .t-bd a.down-btn{background:url(../images/sec-index.png?0200) no-repeat 9999px 9999px;}
+.m-slider ol li,.m-lxwm h3,.m-hzhb h3,.m-lxwm ul li,.m-tit .t-hd .hd-wrap,.m-tit .t-hd .hd-wrap h4,.m-tit .t-hd a.follow,.m-tit .t-hd a.followed,.m-tit .t-bd a.up-btn,.m-tit .t-bd a.down-btn{background:url(../images/sec-index.png?$IMG_V) no-repeat 9999px 9999px;}
 
 /* 清除浮动 */
 .m-mwrap:after,.m-lxwm ul:after,.m-slider ul:after,.m-hzhb .slider ul:after{clear:both;content:'.';display:block;height:0;visibility:hidden;}

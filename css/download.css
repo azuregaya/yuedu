@@ -1,5 +1,5 @@
 /* sprite */
-.m-downslider .innerinfo ul li h5{background:url(../images/downicon.png?0201) no-repeat 9999px 9999px;}
+.m-downslider .innerinfo ul li h5{background:url(../images/downicon.png?$IMG_V) no-repeat 9999px 9999px;}
 
 .m-downslider .innerinfo ul:after{clear:both;content:'.';display:block;height:0;visibility:hidden;}
 .m-downslider .innerinfo ul{zoom:1;}
@@ -64,7 +64,7 @@
 .m-downslider .ipad .innersec01,.m-downslider .iphone .innersec01,.m-downslider .android .innersec01,.m-downslider .wp7 .innersec01{position:relative;}
 .m-downslider .ipad .innersec01 a,.m-downslider .iphone .innersec01 a.link01,.m-downslider .android .innersec01 a.link01,.m-downslider .android .innersec01 a.link02,.m-downslider .android .innersec01 a.link03,.m-downslider .android .innersec01 a.link05,.m-downslider .android .innersec01 a.link06,.m-downslider .wp7 .innersec01 .link01{background-color:#fff;filter:alpha(opacity=0);opacity:0;}
 .m-downslider .ipad .innersec01 a.link01{position:absolute;display:block;width:246px;height:70px;top:243px;left:606px;text-indent:-9999px;}
-.m-downslider .ipad .innersec01 a.link02{position:absolute;display:block;width:193px;height:25px;line-height:25px;top:345px;left:602px;color:#666;text-align:center;text-decoration:none;font-size:14px;}
+.m-downslider .ipad .innersec01 a.link02{position:absolute;display:block;width:193px;height:25px;line-height:25px;top:345px;left:602px;color:#5189bc;text-align:center;text-decoration:underline;font-size:14px;}
 .m-downslider .ipad .innersec01 a.link03{position:absolute;top:498px;left:120px;text-indent:0;color:#bf6160;font-size:14px;filter:alpha(opacity=100);opacity:1;}
 .m-downslider .iphone .innersec01 a.link01{position:absolute;width:246px;height:75px;top:242px;left:521px;text-indent:-9999px;}
 .m-downslider .iphone .innersec01 a.link02{position:absolute;cursor:default;height:90px;left:518px;text-indent:0;top:358px;width:90px;}
@@ -83,8 +83,8 @@
 .m-downslider .androidpad .innersec01 a.link02{width:180px;top:334px;left:530px;}
 .m-downslider .androidpad .innersec01 a.link04{top:309px;left:528px;}
 .m-downslider .androidpad .innersec01 a.link07{top:375px; left:564px;}
-.m-downslider .iphone-nr{background:url(../images/down4.jpg?0200) 0 0;}
-.m-downslider .android-nr{background:url(../images/down5.jpg?0200) 0 0;}
+.m-downslider .iphone-nr{background:url(../images/down4.jpg?$IMG_V) 0 0;}
+.m-downslider .android-nr{background:url(../images/down5.jpg?$IMG_V) 0 0;}
 .m-downslider .info{position:absolute;width:340px;height:100px;top:104px;left:52px;}
 .m-downslider .info p{font-size:12px;line-height:22px;}
 .m-downslider a.godown{position:absolute;display:block;width:254px;height:48px;top:212px;left:52px;text-indent:-9999px;}
@@ -93,24 +93,25 @@
 .m-downslider a.goapp{position:absolute;top:267px;left:200px;color:#cd4544;}
 .m-downslider .innersec01 .linktip{position:absolute;width:100px;height:32px;font-size:12px;color:#fff; text-align:center;}
 .m-downslider .ipad .innersec01 .linktip{top:287px;left:683px;}
-.m-downslider .ipad .innersec01 .floattip{position:absolute;top:345px;left:609px;height:25px;line-height:25px;color:#666;text-align:center;text-decoration:none;}
+.m-downslider .ipad .innersec01 .floattip{position:absolute;top:345px;left:609px;height:25px;line-height:25px;color:#5189bc;text-align:center;text-decoration:underline;}
 .m-downslider .android .innersec01 .linktip{top:248px;left:526px;}
-.m-downslider .android .innersec01 .qr{color:#666;position:absolute;top:302px;left:454px;}
-.m-downslider .android .innersec01 a.how{display:block;text-indent:0;color:#666;position:absolute;top:255px;left:715px;}
+.m-downslider .android .innersec01 .qr{color:#5189bc;position:absolute;top:302px;left:454px;}
+.m-downslider .android .innersec01 a.how{display:block;text-indent:0;color:#5189bc;position:absolute;top:255px;left:715px;}
 .m-downslider .android .innersec01 ul.linklist{position:absolute;left:595px;top:300px;}
 .m-downslider .android .innersec01 ul.linklist li{height:26px;line-height:26px;}
-.m-downslider .android .innersec01 ul.linklist li a{text-indent:0;position:static;font-size:14px;color:#666;}
+.m-downslider .android .innersec01 ul.linklist li a{text-indent:0;position:static;font-size:14px;}
 .m-downslider .iphone .innersec01 .linktip{top:288px;left:600px;}
-.m-downslider .iphone .innersec01 .qr{color:#666;position:absolute;top:337px;left:520px;}
+.m-downslider .iphone .innersec01 .qr{color:#5189bc;position:absolute;top:337px;left:520px;}
 .m-downslider .iphone .innersec01 ul.linklist{position:absolute;left:643px;top:356px;}
 .m-downslider .iphone .innersec01 ul.linklist li{height:26px;line-height:26px;}
-.m-downslider .iphone .innersec01 ul.linklist li a{text-indent:0;position:static;font-size:14px;color:#666;}
+.m-downslider .iphone .innersec01 ul.linklist li a{text-indent:0;position:static;font-size:14px;}
 .m-downslider .androidpad .innersec01 .linktip{top:221px;left:601px;}
 .m-downslider .androidpad .innersec01 .qr{top:287px;left:529px;}
 .m-downslider .androidpad .innersec01 ul.linklist{left:675px;top:285px;}
 .m-downslider .wp7 .innersec01 .linktip{top: 253px;left: 561px;}
 .m-downslider .wp7 .innersec01 a.link01{position:absolute;display:block;width:246px;height:70px;top:207px;left:488px;text-indent:-9999px;}
-.m-downslider .wp7 .innersec01 a.link02{position:absolute;display:block;top:300px;left:488px;font-size: 14px;color: #666;}
+.m-downslider .wp7 .innersec01 a.link02{position:absolute;display:block;top:300px;left:488px;font-size: 14px;}
+.m-downslider .innersec01 a{color: #5189bc;text-decoration: underline;}
 /* 修正91助手浮层bug */
 .key_float_ .ibox_box{
 	margin:0 auto;
@@ -119,7 +120,7 @@
 /* 短信弹窗 */
 .m-smsbox{position:absolute;top:100px;left:20px;width:350px;background-color:#fff;}
 .m-smsbox h3{height:36px;line-height:36px;padding-left:16px;border-bottom:#dedede solid 1px;background-color:#f4f4f4;color:#333;font-size:14px;font-weight:normal;}
-.m-smsbox h3 a{display:block;width:24px;height:24px;float:right;background:url(../images/closex.png) 0 0 no-repeat;margin:5px 5px 0 0;}
+.m-smsbox h3 a{display:block;width:24px;height:24px;float:right;background:url(../images/closex.png?$IMG_V) 0 0 no-repeat;margin:5px 5px 0 0;}
 .m-smsbox .inner{padding:20px 10px 10px 20px;}
 .m-smsbox .inner p{margin-bottom:18px;}
 .m-smsbox .inner label{font-size:16px;color:#666;margin-left:13px;}

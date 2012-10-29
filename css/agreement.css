@@ -1,0 +1,7 @@
+/* 协议 */
+.m-agreement{padding: 25px;}
+.m-agreement p{text-align: left;font-size: 14px;line-height: 28px;}
+.m-agreement p em{font-weight:bold;text-decoration: underline;}
+.m-agreement .content h4{font-size:16px;text-align:center;}
+.m-agreement .content p{margin-bottom:24px;line-height:24px;color:#666;}
+.m-agreement .content p a{text-decoration:underline;}

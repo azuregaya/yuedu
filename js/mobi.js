@@ -1,5 +1,5 @@
 (function(){
-	
+
 	/* 设备检测 */
 	var deviceDetect = function(link1,link2){
 		var ua = navigator.userAgent.toLowerCase();
@@ -58,10 +58,16 @@
 			},
 			error : function(){
 				
-			}	
+			}
 		});
 	};
 	
+	
+	
+	$('img').click(function(){
+		window.open(this.src);
+	});
+
 	$('#J_Addmore').click(function(){
 		if($('#J_Addmore').hasClass('disable')){
 			alert('没有更多评论');
@@ -72,4 +78,26 @@
 	});
 	
 	addMore($('#J_Addmore').attr('data'));
+	/*
+	var iw = $(window).width();
+	
+	$('.fs-content img').each(function(){
+		if($(this).width() > iw){
+			$(this).width(iw - 40);
+		}
+	});
+	
+	$('.img img').each(function(){
+		if($(this).width() > iw){
+			$(this).width(iw-40);
+		}
+	});
+	
+	$('.inmid-2 .img img').each(function(){
+		if($(this).width() > iw){
+			$(this).width(iw-90);
+		}
+	});
+
+	*/
 })();

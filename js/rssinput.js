@@ -68,7 +68,7 @@
 				num_select = page_index;
 				$('#Searchresult').empty().append(selectSec);
 				selectOpt.selectItems();
-				console.log(page_index,getPage,num_select);
+				//console.log(page_index,getPage,num_select);
 			}
 		}
 		

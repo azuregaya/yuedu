@@ -106,7 +106,7 @@
 					</div>
 					<div class="m-tags">
 						<ul>
-							<li class="grzx ul"><a href="#">个人中心</a></li>
+							<li class="grzx ul"><a href="#">个人信息</a></li>
 							<li class="yecx crt"><a href="#">余额查询</a></li>
 							<li class="xfjl ul"><a href="#">消费记录</a></li>
 							<li class="zddy ul"><a href="#">自动订阅</a></li>
@@ -133,5 +133,14 @@
 </div>
 <script src="js/widgets.js"></script>
 <script src="js/header.js"></script>
+<script>
+(function(){
+	var pop = function(num){
+		YD.popTip('成功充值'+ num +'丁丁币');
+	};
+
+	//pop(900);//显示充值成功记录
+})();
+</script>
 </body>
 </html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html;charset=utf-8"/>
+<title>页面标题</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<link type="text/css" rel="stylesheet" href="../css/mobi.css"/>
+<script type="text/javascript" src="http://yuedu.bst2.126.net/js/jquery-1.6.1.min.js?0003"></script>
+</head>
+<body id="page-163-com">
+<div class="g-doc">
+	<div class="g-inner">
+		<div class="m-logo-2">
+			<h1>网易云阅读</h1>
+		</div>
+		
+		<div class="m-login">
+			<form id="J_Form">
+			<p><label>帐号：</label><input id="J_Account" type="email" /></p>
+			<p><label>密码：</label><input id="J_Password" type="password" /></p>
+
+			<p><a id="J_OK" class="button">同意协议并充值</a></p>
+			<p class="info">
+				<a href="#">忘记密码？</a>
+				<a href="#">注册网易通行证</a>
+			</p>
+			</form>
+		</div>
+	</div>
+</div>
+<div id="J_AlertBox" class="m-alert" style="display:none;">
+	<div class="info">
+		<b></b>
+		<p id="J_Tip"></p>
+	</div>
+	<a class="comfirm j-close" href="javascript:;">知道了</a>
+</div>
+<script src="../js/widgets.js"></script>
+<script>
+(function(){
+	var ipt = document.getElementById('J_Account'),pass = document.getElementById('J_Password'), btn = document.getElementById('J_OK'),isOK1 = false, isOK2 = false;
+	var tip = document.getElementById('J_Tip');
+
+	var emailCheck = (function(){
+		var reg = /^([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+@([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+\.[a-zA-Z]{2,3}$/;
+
+		return {
+			ifMail : function(val){
+				if( reg.test(val)  && val != 0){
+					isOK1 = true;
+					return;
+				}else{
+					//alert('请填写正确的帐号');
+					tip.innerText = "请填写正确的帐号";
+					YD.openLayer('#J_AlertBox');
+					ipt.value = '';
+					pass.value = '';
+					isOK1 = false;
+				}
+			}
+		}
+	})();
+
+	var popAlert = function(str){
+		tip.innerText = str;
+		YD.openLayer('#J_AlertBox');
+	};
+
+	var eventBind = function(){
+		ipt.addEventListener('blur',function(){
+			emailCheck.ifMail(this.value);
+		},false);
+
+		btn.addEventListener('click',function(){
+			emailCheck.ifMail(ipt.value);
+			if(pass.value.length == 0){
+				isOK2 = false;
+				tip.innerText = "请填写密码";
+				YD.openLayer('#J_AlertBox');
+			}else{
+				isOK2 = true;
+			}
+			if(isOK1 && isOK2){
+				document.getElementById('J_Form').submit(); // 提交表单
+			}
+		},false);
+	};
+
+	eventBind();
+
+	popAlert('这里是出错信息！！') //出错提示
+})();
+</script>
+</body>
+</html>

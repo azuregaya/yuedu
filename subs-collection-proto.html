@@ -970,7 +970,9 @@ $(document).ready(function(){
 		sendBtn.click(function(){
 			if($(this).hasClass('enable')){
 			var comtTxt = txta.val();
-			
+			if($('.m-mask').length !== 0){
+				$('.m-mask').hide();
+			}
 			$.get('data/json6.js',[sourceID,comtTxt],function(data){
 				var newComt;
 				if(data.state === 'success'){

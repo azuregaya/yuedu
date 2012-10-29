@@ -1,7 +1,7 @@
 [{
 		"resultCode" : 0,
 		"none" : false,
-		"remain" : 9999,
+		"remain" : 19999,
 		"substate" : "checked"
 	}, [
 		{

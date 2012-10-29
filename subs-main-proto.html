@@ -7,6 +7,7 @@
 <meta name="description" content=""/>
 <link type="text/css" rel="stylesheet" href="css/header.css"/>
 <link type="text/css" rel="stylesheet" href="css/yuan.css"/>
+<link type="text/css" rel="stylesheet" href="css/layer.css"/>
 <link href="css/inner.css" rel="stylesheet" type="text/css">
 <script type="text/javascript" src="http://yuedu.bst2.126.net/js/jquery-1.6.1.min.js?0010"></script>
 </head>
@@ -356,6 +357,39 @@
 		</div>
 	</div>
 </div>
+
+<div id="J_SNSFail" class="m-popup m-popup-wb f-db2" style="display:none">
+	<h3>转发失败<a href="javascript:void(0)" class="j-close"></a></h3>
+	<div class="inner">
+		<ul class="m-snserror">
+			<li style="display:none" class="s0">
+				<span class="name">网易微博</span>
+				<span class="j-error"></span>
+			</li>
+			<li style="display:none" class="s1">
+				<span class="name">新浪微博</span>
+				<span class="j-error"></span>
+			</li>
+			<li style="display:none" class="s2">
+				<span class="name">搜狐微博</span>
+				<span class="j-error"></span>
+			</li>
+			<li style="display:none" class="s3">
+				<span class="name">腾讯微博</span>
+				<span class="j-error"></span>
+			</li>
+			<li style="display:none" class="s4">
+				<span class="name">豆瓣开放社区</span>
+				<span class="j-error"></span>
+			</li>
+			<li style="display:none" class="s5">
+				<span class="name">人人开放社区</span>
+				<span class="j-error"></span>
+			</li>
+		</ul>
+	</div>
+</div>
+
 <iframe class="m-if" src="http://yuedu.163.com/guanwang/getMatil.html"></iframe>
 <script type="text/javascript" src="js/widgets.js"></script>
 <script type="text/javascript">
@@ -446,12 +480,20 @@ $(document).ready(function(){
 	var mailShare = function(){
 		
 		var mailTitle = $('#J_MailTitle');
-		var usedItems = $('#J_MailUsed .items input'),checkedItems = $('#J_MailChecked .items input'),pickedAddr = [],jian;
+		var usedItems = $('#J_MailUsed .items input'),checkedItems = $('#J_MailChecked .items input'),pickedAddr = [],jian,cacheArr;
 		
 		mailTitle.val('【分享文章】'+$('#'+currentEID+' .j-mails').attr('data1'));
 		
 		var arrayOps = function(val){
-			jian = false;
+			jian = false, cacheArr = [];
+			if(pickedAddr.length > 0){
+				for (var j = 0; j < pickedAddr.length; j++) {
+					cacheArr.push(pickedAddr[j]);
+				};
+			}else{	
+				cacheArr = [];
+			}
+
 			if(pickedAddr.length == 0){
 				pickedAddr.push(val);
 			}else{
@@ -481,12 +523,22 @@ $(document).ready(function(){
 		addComments();
 		
 		var displayMail = function(){
-			var text = "";
+			var text = "",crtText = $('#J_MailList').val(),cacheStr = '';
+			for(var j=0;j<cacheArr.length;j++){
+				cacheStr += cacheArr[j] + ';';
+			}
 			for(var i=0;i<pickedAddr.length;i++){
-				text += pickedAddr[i]+',';
+				text += pickedAddr[i]+';';
 			};
-			
-			$('#J_MailList').val(text);
+
+			crtText = crtText.replace(cacheStr,'');
+			crtText = crtText.replace(';','');
+
+			if(crtText.length === 0){//如果输入字符为空，就不加分号
+				$('#J_MailList').val(crtText +text);
+			}else{
+				$('#J_MailList').val(crtText +';' +text);
+			}
 		};
 		
 		usedItems.unbind().click(function(){
@@ -735,6 +787,12 @@ $(document).ready(function(){
 		$('.m-parawrap').removeClass('m-parawrap-t');
 	};
 	
+	var mpush = function(arr /*, args */) {
+		for (var i = 1; i < arguments.length; i++) {
+			arr.push(arguments[i]);
+		}
+	};
+
 	var loadBrief = function(str){//加载十条缩略信息
 		var url = str;
 		$.ajax({
@@ -748,41 +806,39 @@ $(document).ready(function(){
 					if(hintBox.css('display') !== 'none' && hintBox.text() === '正在加载文章缩略，请稍候'){
 						hintBox.hide();
 					}
-					var data = _data[1];
+					var data = _data[1],arr=[];
 					$.each(data,function(entryIndex){
 						/* 创建缩略浏览部分DOM结构*/
-						var entryHTML = '<div id="J_Entry' + data[entryIndex].entryID + '" class="m-entry m-entry-t" first="true" entryid="' + data[entryIndex].entryID + '" sourceid="' + data[entryIndex].sourceID +  '">';
-						entryHTML += '<div class="header"><h2 class="headerh2 '+ data[entryIndex].read +'"><span></span>' + data[entryIndex].title + '</h2>' +'<span class="time">' + data[entryIndex].posttime + '</span></div>';
-						
-						entryHTML += '<div class="opt"><ul>';
-						entryHTML += '<li><a class="readori" href="' + data[entryIndex].sourceURL +'" target="_blank">&gt;&gt;阅读原文</a></li>'
-						entryHTML += '<li><a class="cmt" href="javascript:void(0);">评论</a></li>';
+						mpush(arr,'<div id="J_Entry', data[entryIndex].entryID, '" class="m-entry m-entry-t" first="true" entryid="', data[entryIndex].entryID, '" sourceid="', data[entryIndex].sourceID, '">');
+						mpush(arr,'<div class="header"><h2 class="headerh2 ', data[entryIndex].read, '"><span></span>', data[entryIndex].title, '</h2>', '<span class="time">', data[entryIndex].posttime, '</span></div>');
+						mpush(arr,'<div class="opt"><ul>');
+						mpush(arr,'<li><a class="readori" href="', data[entryIndex].sourceURL, '" target="_blank">&gt;&gt;阅读原文</a></li>');
+						mpush(arr,'<li><a class="cmt" href="javascript:void(0);">评论</a></li>');
 						if(data[entryIndex].favor === "unstar"){
-							entryHTML += '<li class="favor favor-t"><a href="javascript:void(0);">收藏</a></li>';
+							mpush(arr,'<li class="favor favor-t"><a href="javascript:void(0);" data-entry="', data[entryIndex].dataEntry || '', '" data-signature="', data[entryIndex].entrySignature || '', '">收藏</a></li>');
 						}else if(data[entryIndex].favor === "stared"){
-							entryHTML += '<li class="favor favor-t favoron"><a href="javascript:void(0);">取消收藏</a></li>';
+							mpush(arr,'<li class="favor favor-t favoron"><a href="javascript:void(0);">取消收藏</a></li>');
 						}
-						entryHTML += '<li><a class="forward forward-t" href="javascript:void(0);">转发至</a></li>';
-						entryHTML += '<li class="ems"><a class="j-mails j-mails-t" href="javascript:void(0);" data1="转发：' + data[entryIndex].title +'" data2="'+ data[entryIndex].sourceURL +'" data3="' + data[entryIndex].title + '" data4="' + data[entryIndex].posttime + '">邮件分享</a></li></ul>';
-						entryHTML += '<div class="cpos" id="J_Cpos' + data[entryIndex].entryID +'" style="display:none;"></div></div>';
-						entryHTML += '<div class="content">';
-						entryHTML += '<div class="m-brief">';
+						mpush(arr,'<li><a class="forward forward-t" href="javascript:void(0);">转发至</a></li>');
+						mpush(arr,'<li class="ems"><a class="j-mails j-mails-t" href="javascript:void(0);" data1="转发：', data[entryIndex].title, '" data2="', data[entryIndex].sourceURL, '" data3="', data[entryIndex].title, '" data4="', data[entryIndex].posttime, '">邮件分享</a></li></ul>');
+						mpush(arr,'<div class="cpos" id="J_Cpos', data[entryIndex].entryID, '" style="display:none;"></div></div>');
+						mpush(arr,'<div class="content">','<div class="m-brief">');
 						if(data[entryIndex].contentType === 'album' || data[entryIndex].contentType === 'video'){
-							entryHTML += '<div class="m-bfimg"><a href="javascript:void(0);"><img class="thumbs" src="' + data[entryIndex].summaryImage.summaryImageURL + '"';
+							mpush(arr,'<div class="m-bfimg"><a href="javascript:void(0);"><img class="thumbs" src="', data[entryIndex].summaryImage.summaryImageURL, '"');
 							if($('#J_IFIE6').val() === 'yes'){
 								if(data[entryIndex].summaryImage.summaryImageWidth > 363){
-									entryHTML += ' width="363"';
+									mpush(arr,' width="363"');
 								}else if(data[entryIndex].summaryImage.summaryImageHeight > 250){
-									entryHTML += ' height="250"';
+									mpush(arr,' height="250"');
 								}
 							}
-							entryHTML += ' /></a></div>';
+							mpush(arr,' /></a></div>');
 						}
-						entryHTML += '<div class="m-parawrap m-parawrap-t"><p>' + data[entryIndex].breif +'...</p></div><a class="switch switch-1">查看全文</a></div>';
-						entryHTML += '<div class="m-detail hidden"></div></div>';
+						mpush(arr,'<div class="m-parawrap m-parawrap-t"><p>', data[entryIndex].breif, '...</p></div><a class="switch switch-1">查看全文</a></div>');
+						mpush(arr,'<div class="m-detail hidden"></div></div></div>');
 						
-						tenmore.before(entryHTML);
 					});
+					tenmore.before(arr.join(''));
 					pages++;
 					setBriefHeight();
 					addBriefEvent();
@@ -803,16 +859,17 @@ $(document).ready(function(){
 	
 	var toggleStar = function(){//添加取消收藏
 		$('.favor-t a').click(function(){
-			var btn = $(this),id=btn.parents('.m-entry').attr('entryid'),txt=btn.text();
-			$.get('data/json5.js',[id,txt],function(data){//传送参数为该条目的ID号
-				var state = data.state;
+			var btn = $(this),id=btn.parents('.m-entry').attr('entryid'),txt=btn.text(),dataEntry=btn.attr('data-entry'),entrySignature=btn.attr('data-signature');
+			var operation = txt == '收藏' ? 'addFavorite' : 'delFavorite';
+			$.get('data/json5.js',{'operation': operation, 'contentUuid': id, 'dataEntry': dataEntry, 'entrySignature': entrySignature},function(serverResponse){//传送参数为该条目的ID号
+				var state = serverResponse.state;
 				if(state === 'unlogin') alert('请登录');
 				if(state === 'stared'){
 					btn.text('收藏').parent().removeClass('favoron').hide().fadeIn(500);
 				}else{
 					btn.text('取消收藏').parent().addClass('favoron').hide().fadeIn(500);
 				}
-			},['json']);
+			},['json']);///source.do
 		});
 		$('.favor').removeClass('favor-t');
 	};
@@ -820,6 +877,16 @@ $(document).ready(function(){
 	var checkSNS = function(t,l){//检测开通的sns，目前按照排列对应顺序，可改成更准确的按照id
 		var _title = t, _link = l;
 		var si = $('.m-snsdata input'), snsArr = [],list = $('#J_Forward ul li');
+
+		var snsErrorBox = $('#J_SNSFail'),
+			snsErrorBoxList = snsErrorBox.find('li'),
+			errorMSG = [
+					'重复发表相同内容',
+					'网络连接问题',
+					'操作频率太快',
+					'敏感字符',
+					'认证失败<a href="#">(去重新认证)</a>',
+					'其他复杂原因<a href="#">(去错误报告)</a>'];
 
 		snsTxt.unbind().bind('keyup mouseup blur',function(){//检测转发字数,控制140以内
 			if($.trim($(this).val()).length > 140 || $.trim($(this).val()) === "说说我的看法"){
@@ -910,16 +977,21 @@ $(document).ready(function(){
 			}
 			$.ajax({
 				type: 'POST',
-				url: '/weibo.do',
+				url: 'data/json31.js',///weibo.do
 				data: $("#publishForm").serialize(),
 				crossDomain: false,
 				dataType: 'text',
-				data : [_title,_link],
-				success: function(data) {
-					try {
+				success: function(serverResponse) {
+					/*
+					if (isServerError(serverResponse)) {
+						showServerError();
+						return;
+					}*/
+					var data = $.parseJSON(serverResponse);
+					if (data.ResultCode == 0) {//ResultCode.SUCCESS
 						var success = '';
 						var fail = '';
-						var results = $.parseJSON(data);
+						var results = data.results;
 						for (var i = 0; i < results.length; i++) {
 							var r = results[i];
 							if (r.successful) {
@@ -928,9 +1000,40 @@ $(document).ready(function(){
 								fail += r.siteName + ',';
 							}
 						}
+						popHint('转发成功');
+						if (typeof _gaq != 'undefined') { // Google analytics
+							_gaq.push(['_trackEvent', 'yuedu', 'share', 'share_succeed']);
+							logRequest('share_succeed');
+						}
 						//alert('success: ' + success + ' \nfail: ' + fail);
-					} catch (e) {
-						//alert(data);
+					} else if (data.ResultCode == -999) {//ResultCode.ERROR_NOT_LOGGED_IN 自己定义的，线上替换
+						popHint('请登录');
+					} else if (data.ResultCode == -9) {//ResultCode.ERROR_PARTIAL_FAILURE  自己定义的，线上替换
+						var failResults = data.results;
+						snsErrorBoxList.each(function(){
+							$(this).hide();
+						});
+
+						for(var j=0; j<failResults.length; j++){
+							var f = failResults[j];
+							if(!f.successful){
+								snsErrorBoxList.eq(f.site).find('.j-error').html(errorMSG[f.error]);
+								snsErrorBoxList.eq(f.site).show();
+							}
+						}
+
+						YD.openLayer('#J_SNSFail');
+						//popHint('部分微博发表失败');
+						if (typeof _gaq != 'undefined') { // Google analytics
+							_gaq.push(['_trackEvent', 'yuedu', 'share', 'share_fail']);
+							logRequest('share_fail');
+						}
+					} else {
+						popHint('出错了，请稍后再试');
+						if (typeof _gaq != 'undefined') { // Google analytics
+							_gaq.push(['_trackEvent', 'yuedu', 'share', 'share_fail']);
+							logRequest('share_fail');
+						}
 					}
 					$('#J_Forward').hide();
 				},

@@ -1,6 +1,6 @@
 {
-	"resultCode" 	:	1,
-	"whole"			: 	false,
+	"resultCode" 	:	0,
+	"type"			: 	"chap",
 	"paid"			:   false
 }
 

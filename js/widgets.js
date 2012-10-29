@@ -165,14 +165,31 @@ YD.openLayer = function(_id){
 	/*var st = setTimeout(function(){
 		return $(document).scrollTop();
 	},100)*/
+	setTimeout(function(){
+		YD.createMask();
+	},60);
 	var st = $(document).scrollTop(), toff = (winHeight - bHeight)/2 + st, loff = (winWidth - bWidth)/2;
-	box.css({'top':toff,'left':loff}).show();
+	box.css({'top':toff,'left':loff,'z-index':8999}).show();
 	$((_id+' .j-close')).unbind().click(function(e){
 		e.preventDefault();
 		box.hide();
+		if($('.m-mask').length !== 0){
+			$('.m-mask').hide();
+		}
 	});
 }
 
+/*******************浮层遮罩********************/
+YD.createMask = function(){
+	if($('.m-mask').length === 0){
+		var mask = $('<div class="m-mask" style="display:block;"></div>');
+		mask.height($(document).height());
+		mask.width($(document).width());
+		mask.insertAfter($('.g-doc'));
+	}else{
+		$('.m-mask').height($(document).height()).show();
+	}
+};
 
 /*******************分页代码********************/
 YD.pagination = function(){

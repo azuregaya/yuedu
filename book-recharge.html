@@ -74,8 +74,12 @@
 						</div>
 					</div>
 					<div class="m-sum m-sum-1">
-						<div class="m-agreement" style="text-align:left;">
-							<p><input id="J_CheckRule" type="checkbox" checked="checked"/><label>我已经阅读并同意<a id="J_Rules" href="javascript:void(0);">《网易云阅读平台服务协议》</a></label></p>
+						<p class="outer">
+							充值：<span id="J_RMB">0</span>元（<span id="J_DSB">0</span>读书币） 
+							<a id="J_Gopay" href="#" class="gopay gopay-2 gopay-3">下一步</a>
+						</p>
+						<div class="m-agreement">
+							<p><input id="J_CheckRule" type="checkbox" checked="checked"/><label for="J_CheckRule">我已经阅读并同意<a id="J_Rules" href="javascript:void(0);">《网易云阅读平台服务协议》</a></label></p>
 							<div id="J_RulesCont" class="content" style="display:none;">
 								<h4>网易云阅读平台服务协议</h4>
 								<br>
@@ -96,7 +100,13 @@
 								</p>
 								<p>
 									第三条 网易云阅读服务规范：<br>
-									<em>除非另有证明，网易公司储存在其服务器上的数据是您使用网易云阅读服务的唯一有效证据。</em>
+									<em>1.除非另有证明，网易公司储存在其服务器上的数据是您使用网易云阅读服务的唯一有效证据。</em><br>
+									2、关于用户付费的特别提示：<br>
+									(A) 在网易云阅读平台中，用户通过任何支付手段（包括但不限于网易宝电子钱包充值、支付宝充值、银行卡充值等）为其账号充值所直接获得的均为“丁丁币”；<br>
+									(B) “丁丁币”将用于在网易云阅读平台订阅由网易公司提供的需付费后方可阅读的书籍、杂志、网络媒体等数字作品；<br>
+									(C) 您理解并同意：网易公司对付费订阅的作品实行先支付相应的“丁丁币”后提供作品的方式，您及时、足额、合法的支付订阅作品所需的“丁丁币”是网易公司向您提供作品及同意您阅读作品的前提。<br>
+									(D) 您理解并同意：您为您的账号充值所获得的“丁丁币”将不会因网易云阅读平台服务的中止、中断或因你的单方要求而退还。如网易云阅读平台终止服务的，您账户中的“丁丁币”余额我们将会根据您充值时的比例返还法定货币或根据固定比例兑换为网易公司提供的其他类型虚拟货币以供您在购买或享用其他服务时使用。具体方案以届时网站颁布的公告内容为准。<br>
+									（E）网易云阅读平台是您账号唯一合法充值并获得“丁丁币”的途径，通过其他渠道购买或获得的“丁丁币”不受网易公司保护，网易公司随时有权封闭账号、回收 “丁丁币”。<br>
 								</p>
 								<p>
 									第四条 网易云阅读平台使用规则<br>
@@ -143,7 +153,6 @@ D.	您与其它任何第三方的纠纷。
 								
 							</div>
 						</div>
-						<p>充值：<span id="J_RMB">0</span>元（<span id="J_DSB">0</span>读书币） <a id="J_Gopay" href="#" class="gopay">下一步</a></p>
 					</div>
                 </div>
             </div>
@@ -157,7 +166,7 @@ D.	您与其它任何第三方的纠纷。
                 <div class="share"><a href="#" class="s1">QQ空间</a><a href="#" class="s2">新浪微博</a><a href="#" class="s3">人人网</a><a href="#" class="s4">开心网</a><a href="#" class="s5">搜狐微博</a><a href="#" class="s6">TOM</a><a href="#" class="s7">淘江湖</a><a href="#" class="s8">网易微博</a></div>
             </div>
             <div class="m-foot">
-                <p class="link"><a href="#">关于网易</a><span class="sep">|</span><a href="#">客户服务</a><span class="sep">|</span><a href="#">官方微博</a><span class="sep">|</span><a href="#">网易网导航</a><span class="sep">|</span><a class="feedback" href="http://fankui.163.com/ft/comment.fb?pid=11001">反馈</a></p>
+                <p class="link"><a href="#">关于网易</a><span class="sep">|</span ><a href="#">客户服务</a><span class="sep">|</span><a href="#">官方微博</a><span class="sep">|</span><a href="#">网易网导航</a><span class="sep">|</span><a class="feedback" href="http://fankui.163.com/ft/comment.fb?pid=11001">反馈</a></p>
                 <p>网易公司版权所有&copy;1997-2012</p>
             </div>
         </div>
@@ -167,10 +176,10 @@ D.	您与其它任何第三方的纠纷。
 <script src="js/header.js"></script>
 <script>
 (function(){
-	document.getElementById('J_CheckRule').checked = true;
+	document.getElementById('J_CheckRule').checked = false;
 	
 	//console.log($('#J_CheckRule')[0].checked);
-	var state = false,valid = false;
+	var state = false,valid = false,storeVal;
 	$('#J_Rules').click(function(){
 		if(!state){
 			$('#J_RulesCont').slideDown(300);
@@ -181,13 +190,23 @@ D.	您与其它任何第三方的纠纷。
 		}
 	});
 	
+	$('#J_CheckRule').click(function(){
+		if(this.checked){
+			if(valid) $('#J_Gopay').removeClass('gopay-2');
+		}else{
+			$('#J_Gopay').addClass('gopay-2');
+		}
+	});
+
 	$('#J_Gopay').click(function(e){
 		e.preventDefault();
 		if(!document.getElementById('J_CheckRule').checked){
 			YD.popTip('请阅读并同意《网易云阅读平台服务协议》');
 		}else{
 			if(valid){
-				//console.log('ready to go!');
+				$('#J_Form').submit();
+			}else{
+				YD.popTip('请填入有效的充值金额');
 			}
 		}
 	});
@@ -201,23 +220,30 @@ D.	您与其它任何第三方的纠纷。
 
 		return {
 			ifNum : function(val){
-				if(reg1.test(val) || reg2.test(val) || reg3.test(val)){
+				if(( reg1.test(val) || reg2.test(val) || reg3.test(val)) && val != 0){
 					tip.hide();
 					amountCheck.setNum(val);
+					if($('#J_CheckRule')[0].checked){
+						$('#J_Gopay').removeClass('gopay-2');
+					}else{
+						$('#J_Gopay').addClass('gopay-2');
+					}
 				}else{
 					tip.text('金额必须为正整数或小数，小数点后不超过2位').show();
 					amountCheck.setNum();
+					$('#J_Gopay').addClass('gopay-2');
 				}
 			},
 			setNum : function(num){
 				if(num){
 					var _num = num*1;
 					rmb.text(_num);
-					dsb.text(_num*100);
+					dsb.text(Math.round(_num*100));
 					valid = true;
 				}else{
 					rmb.text(0);
 					dsb.text(0);
+					valid = false;
 				}
 			}
 		}
@@ -232,13 +258,22 @@ D.	您与其它任何第三方的纠纷。
 				$('#J_Amount').val(suggest);
 				amountCheck.ifNum(suggest);
 			},
+			setCharge : function(num){
+				var _num = num;
+				if(_num){
+					amountCheck.ifNum(_num);
+					$('#J_AmountRadio')[0].checked = true;
+					$('#J_Amount').val(num);
+				}
+			},
 			init : function(b,p){
 				if(b < p){
 					balance = b;
 					price = p;
-					suggest = price - balance;
-					suggest = (Math.round(suggest*100))/100;
+					suggest = (price - balance).toFixed(2);
 					moneyOps.setVal();
+				}else{
+					$('#J_R1').trigger('click');
 				}
 				
 			}
@@ -250,6 +285,7 @@ D.	您与其它任何第三方的纠纷。
 
 		amount.blur(function(){
 			var val = $(this).val();
+			storeVal = val;
 			if(amountRadio[0].checked){
 				amountCheck.ifNum(val);
 			}
@@ -261,16 +297,26 @@ D.	您与其它任何第三方的纠纷。
 			amountCheck.setNum();
 		});
 
+		amountRadio.click(function(){
+			if(storeVal){
+				amount.val(storeVal);
+				amountCheck.ifNum(storeVal);
+			}
+		});
+
 		sep.click(function(){
 			amount.val('输入金额');
 			$('#J_Tips').hide();
-			amountCheck.setNum($(this).val());
+			amountCheck.ifNum($(this).val());
+			storeVal = $(this).val();
 		});
 
 	};
 
 	eventBind();
+	$('#J_R1').trigger('click');
 	//moneyOps.init(10,20.99);//两个参数为剩余金额、目标书籍金额
+	//moneyOps.setCharge(19);//设置充值金额
 })();
 </script>
 </body>
