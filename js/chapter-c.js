@@ -206,6 +206,9 @@ var chapterSet = (function(){
 					$('#J_ChargeLink_Cart').attr('href','/recharge.do?operation=form&v_required='+n);
 					goBtn.addClass('fbd');
 					goRecharge.show();
+					$('#J_ChargeLink_Cart').click(function(e){
+						YD.openLayer('#J_After');
+					});
 				}
 			},
 			checkSub : function (str){

@@ -1,6 +1,6 @@
 {
 	"resultCode" 	:	0,
-	"Price"  		:	51.43,
+	"Price"  		:	551.43,
 	"Number"		:   4
 }
 

@@ -305,7 +305,7 @@
 	<div class="inner">
 		<p>在新打开的页面上充值后继续购买</p>
 		<div class="bt">
-			<a class="ok j-close">充值成功</a>
+			<a id="J_TrackBalance" class="ok">充值成功</a>
 			<a class="" href="/help/recharge" target="_blank">充值帮助</a>
 		</div>
 	</div>
@@ -422,6 +422,45 @@
 			}
 		});
 	};
+
+	var getBalance = function(){
+		$('#J_TrackBalance').click(function(e){
+			$.ajax({
+				url : 'data/json32.js',///queryAccount.do?fields=balance
+				dataType : 'json',
+				type : 'GET',
+				success : function(data){
+					$('#J_After').hide();
+					$('.m-mask').hide();
+					if(data.resultCode == -694) {
+							YD.popTipLayer('该书还没有需要付费的章节，您暂时不需要购买');
+							return;
+					}else if(data.resultCode == -697){
+							YD.popTipLayer('您已经购买过了，请刷新页面');
+							return;
+					}else if(data.resultCode == -1){
+							YD.popTipLayer('出错了，请稍候再试！');
+							return;
+					}else if(data.resultCode == -999){
+							login163();
+					}else if(data.resultCode == 0){
+						var balance = $('#J_CartRemain'), total = $('#J_TotalPrice');
+						balance.text(data.balance);
+						if(data.balance*1 >= total.text()*1){
+							$('#J_ReCheck').hide();
+							$('#J_GoPay').removeClass('fbd');
+						}else{
+							$('#J_ReCheck').show();
+							$('#J_GoPay').addClass('fbd');
+						}
+					}
+				},
+				error : function(){
+					YD.popTipLayer('出错了，请稍候再试！');
+				}
+			});
+		});
+	};
 	
 	var init = function(){
 		chapterSet.priceSum.setChange();
@@ -429,6 +468,7 @@
 		chapterSet.selectOps.init('#J_Cart .ccb');
 		selectEvent();
 		delAll();
+		getBalance();
 	}
 	
 	init();
